@@ -1,0 +1,352 @@
+--[[ Protected by Lua Guard ]]
+
+( function (...) local Players = game:GetService("\080\108\097\121\101\114\115") local RunService = game:GetService("\082\117\110\083\101\114\118\105\099\101") local UserInputService = game:GetService("\085\115\101\114\073\110\112\117\116\083\101\114\118\105\099\101") local _lIlIlIlIIl = workspace.CurrentCamera local _IllllIlIlI = Players.LocalPlayer local _lIlIIIIIlI = game:GetService("\083\116\097\116\115") local ReplicatedStorage = game:GetService("\082\101\112\108\105\099\097\116\101\100\083\116\111\114\097\103\101") local _IlIlIllIIl = loadstring(game:HttpGet("\104\116\116\112\115\058\047\047\114\097\119\046\103\105\116\104\117\098\117\115\101\114\099\111\110\116\101\110\116\046\099\111\109\047\120\050\122\117\047\079\080\069\078\045\083\079\085\082\067\069\045\085\073\045\082\079\066\076\079\088\047\114\101\102\115\047\104\101\097\100\115\047\109\097\105\110\047\088\050\090\085\037\050\048\085\073\037\050\048\082\079\066\076\079\088\037\050\048\079\080\069\078\037\050\048\083\079\085\082\067\069\047\068\117\109\109\121\085\105\045\108\101\097\107\045\098\121\045\120\050\122\117\047\102\101\116\099\104\105\110\103\045\109\097\105\110\047\084\111\111\108\115\047\070\114\097\109\101\119\111\114\107\046\108\117\097\117"))() local _IIIlIIllll = 0x10 local _IIIIlIlIlI = false local _IllllllIII = 0.6 local _lIllIlIIll = {} local _llllIllIII = false local _IlllIIIIlI = nil local _IIIllllllI = false local _IllIlIlIII = 0x1 local _lIllllllIl = nil local _IIIIlIIlII = { Brightness = game.Lighting.Brightness, Ambient = game.Lighting.Ambient, OutdoorAmbient = game.Lighting.OutdoorAmbient, FogEnd = game.Lighting.FogEnd, FogStart = game.Lighting.FogStart } local _IlIIIIlllI = false local _llIlIllIII = false local _IIlIllllII = false local _llIIllIlll = false local _lIlIlllIII = { espcolor = Color3.fromRGB(0xFF, 0xFF, 0xFF), outlinecolor = Color3.fromRGB(0xFF, 0xFF, 0xFF), outlinefillcolor = Color3.fromRGB(0xFF, 0xFF, 0xFF), tracercolor = Color3.fromRGB(0xFF, 0xFF, 0xFF), skeletoncolor = Color3.fromRGB(0xFF, 0xFF, 0xFF), espsize = 0x10, tracersize = 0x2, outlinetransparency = 0x0, outlinefilltransparency = 0x1, rainbowesp = false, rainbowoutline = false, rainbowtracers = false, rainbowskeleton = false, rainbowspeed = 0x5, tracerposition = "\066\111\116\116\111\109" } local _llIIlIIlII = 0x0 local _IlIllIIlll = 0x0 local _lIIIlIIIIl = {} local _IIllIlIIII = {} local _llIIllIlII = {} local _IIIllIIlIl = {} local _lIlIlIIlII = {} local _IlIIIIIllI = {} local _IIIlllllll = false local _IllllIlIIl = false local _lIIlllIlll = "\078\101\097\114\101\115\116\032\080\108\097\121\101\114" local _lIllllIIIl = "\072\101\097\100" local _IIIIIlIIlI = false local _IlIIlIIllI = false local _lIIIllIllI = 0x64 local _IllllIlllI = Color3.fromRGB(0xFF, 0xFF, 0xFF) local _IIIIlllllI = nil local _lIlIIlllII = nil local _IIlllIIlII = nil local _lIlIIllIlI = 0x2 local _IlIIIIlIIl = 0x3E8 local _IIIlIIlIII = 0x1F4 local _lllllIIlll = 0x3E8 local _lIlIIllIlI = false local _IIIIIIIlll = false local _llIIIIIIIl = nil local _lIllIlIlIl = {} local _llIIIllllI = {} local _IIIIIIlIII = true local _IIIllllIlI = 0.4 local _IIllIllllI = 0x0 local _IlIllIlIll = 0x0 local _IIlIlIIllI = true local _lIIlIlIIII = true local _lIlIlIIIlI = false local _IIlIlIlIll = 1.5 local _lIlllIIlll = 0.1 local _lllIlIIllI = 0x0 local _IIIlIIIlII = nil local _IIIIIlIlll = nil local _lIIlIllIIl = false local _llIIIIIIlI = false local _lIllIIIlIl = 0xA local _llllIIlIlI = false local _IlIIlIllll = Color3.fromRGB(0xFF, 0xFF, 0xFF) local _IIIIIIIllI = 0.5 local _IIlIIlllIl = nil local _llIlIllIll = nil local _IlllIlIlll = nil local _IIlIlIlIlI = nil local _llIlIllIII = 0x0 local _IlllIlIlll = 0x0 local _IlllllIIll = false local _IlIIIIlIII = false local _lIlIIIllII = 0x0 local _lllIIlIIll = 0x0 local _lIllIIlIlI = nil local _IIlIlllIlI = false local _lIIlIIllII = 0xA local _lIIlIlllII = 0x1 local _llllIIIllI = 0x0 local _IIllIlllIl = nil local _lIIlIlllIl = nil local _lllIllIIlI = nil local _IlIIlIlIlI = "\077\097\116\101\114\105\097\108" local _IlIIlIlIlI = "" local _IlllIlllII = "" local _llIlIlIllI = false local _IllIIIlllI = 0x1 local _lIIlIllIII = nil local _llIIllIlII = false local _lIllIllIIl = 0x0 local _lIIllIlIlI = 0x0 local _IIIIlIlIII = 0xA local _IIIlIIIlll = "\066\097\099\107\119\097\114\100\115" getgenv().RGB_ForceNeon = true local _lIIIIIIlII = false local function _IlIIllIIlI() if not _IllllIlIlI.Character then return nil end
+ return _IllllIlIlI.Character:FindFirstChild("\072\117\109\097\110\111\105\100\082\111\111\116\080\097\114\116") end
+ local function _IlllllIllI() local _lIllIlIlII = tick() local _IlIIlIIIIl = 0xB - _lIlIlllIII.rainbowspeed local _llllIlIIIl = 0.001 * _IlIIlIIIIl if _lIllIlIlII - _IlIllIIlll >= 0.1 then _llIIlIIlII = (_llIIlIIlII + _llllIlIIIl) % 0x1 _IlIllIIlll = _lIllIlIlII end
+ return Color3.fromHSV(_llIIlIIlII, 0x1, 0x1) end
+ local function _IIlIIIIIIl() local _lIllIlIlII = tick() local _IlIIlIIIIl = 0xB - _IIIIlIlIII local _llllIlIIIl = 0.001 * _IlIIlIIIIl if _IIIlIIIlll == "\066\097\099\107\119\097\114\100\115" then _llllIlIIIl = -_llllIlIIIl end
+ if _lIllIlIlII - _lIIllIlIlI >= 0.1 then _lIllIllIIl = (_lIllIllIIl + _llllIlIIIl) % 0x1 _lIIllIlIlI = _lIllIlIlII end
+ return Color3.fromHSV(_lIllIllIIl, 0x1, 0x1) end
+ local function _IIlIlIlllI(player) if not player.Character then return "\078\111\110\101" end
+ local _IlIllIIIlI = player.Character:FindFirstChildWhichIsA("\084\111\111\108") if _IlIllIIIlI then return _IlIllIIIlI.Name end
+ return "\078\111\110\101" end
+ local function _IlIIIlIIIl(player) if player == _IllllIlIlI or _lIIIlIIIIl[player] then return end
+ local _llIlIIlIlI = Drawing.new("\084\101\120\116") _llIlIIlIlI.Size = _lIlIlllIII.espsize _llIlIIlIlI.Center = true _llIlIIlIlI.Outline = true _llIlIIlIlI.Color = _lIlIlllIII.espcolor _llIlIIlIlI.Font = 0x2 _llIlIIlIlI.Visible = false _lIIIlIIIIl[player] = { Name = _llIlIIlIlI } end
+ local function _lIIllIllII(player) if _lIIIlIIIIl[player] then _lIIIlIIIIl[player].Name:Remove() _lIIIlIIIIl[player] = nil end
+ end
+ local function _IlIlllIlII() for player, esp in pairs(_lIIIlIIIIl) do if player.Character and player.Character:FindFirstChild("\072\117\109\097\110\111\105\100\082\111\111\116\080\097\114\116") then local _IlIllIllII = player.Character.HumanoidRootPart local _lllllIlIlI, onscreen = _lIlIlIlIIl:WorldToViewportPoint(_IlIllIllII.Position) local _lIlllIIllI = _IlIIIIIllI[player] local _IIIlllllIl = _lIlllIIllI and Color3.fromRGB(0xFF, 0x0, 0x0) or (_lIlIlllIII.rainbowesp and (_llIIllIlII and _IIlIIIIIIl() or _IlllllIllI()) or _lIlIlllIII.espcolor) esp.Name.Color = _IIIlllllIl esp.Name.Size = _lIlIlllIII.espsize if onscreen then local _lllllllIlI = (_lIlIlIlIIl.CFrame.Position - _IlIllIllII.Position).Magnitude local _lllIlIIlII = _IIlIlIlllI(player) local _lIllIllllI = _lIlllIIllI and "\091\083\072\073\069\076\068\069\068\093\032" or "" esp.Name.Position = Vector2.new(_lllllIlIlI.X, _lllllIlIlI.Y - 0x14) esp.Name.Text = _lIllIllllI .. player.Name .. "\032\124\032" .. math.floor(_lllllllIlI) .. "\032\115\116\117\100\115\032\124\032" .. _lllIlIIlII esp.Name.Visible = true else esp.Name.Visible = false end
+ else esp.Name.Visible = false end
+ end
+ end
+ local function _IlIllIIIIl(player, character) if not character then return end
+ local _IIlIIlllll = player.UserId if _IIllIlIIII[_IIlIIlllll] then _IIllIlIIII[_IIlIIlllll]:Destroy() end
+ local _llIllIllIl = Instance.new("\072\105\103\104\108\105\103\104\116") _llIllIllIl.FillTransparency = _lIlIlllIII.outlinefilltransparency _llIllIllIl.OutlineTransparency = _lIlIlllIII.outlinetransparency _llIllIllIl.OutlineColor = _lIlIlllIII.rainbowoutline and (_llIIllIlII and _IIlIIIIIIl() or _IlllllIllI()) or _lIlIlllIII.outlinecolor _llIllIllIl.FillColor = _lIlIlllIII.rainbowoutline and (_llIIllIlII and _IIlIIIIIIl() or _IlllllIllI()) or _lIlIlllIII.outlinefillcolor _llIllIllIl.Adornee = character _llIllIllIl.Parent = character _IIllIlIIII[_IIlIIlllll] = _llIllIllIl end
+ local function _IIIIllIlII(player) local _IIlIIlllll = player.UserId _llIIllIlII[_IIlIIlllll] = _llIIllIlII[_IIlIIlllll] or {} local function _IlIIlIlIll(character) if not character then return end
+ task.spawn( function () local _IIlIIIlIll = character:WaitForChild("\072\117\109\097\110\111\105\100", 0x5) if not _IIlIIIlIll then return end
+ if _llIlIllIII then _IlIllIIIIl(player, character) end
+ table.insert(_llIIllIlII[_IIlIIlllll], player:GetPropertyChangedSignal("\084\101\097\109\067\111\108\111\114"):Connect( function () local _lIIlIlIlll = _IIllIlIIII[_IIlIIlllll] if _lIIlIlIlll then _lIIlIlIlll.OutlineColor = _lIlIlllIII.rainbowoutline and (_llIIllIlII and _IIlIIIIIIl() or _IlllllIllI()) or (player.TeamColor and player.TeamColor.Color) or _lIlIlllIII.outlinecolor end
+ end
+ )) table.insert(_llIIllIlII[_IIlIIlllll], _IIlIIIlIll.Died:Connect( function () removehighlight(player) end
+ )) end
+ ) end
+ local _lllllIIIII = player.CharacterAdded:Connect(_IlIIlIlIll) table.insert(_llIIllIlII[_IIlIIlllll], _lllllIIIII) if player.Character then _IlIIlIlIll(player.Character) end
+ end
+ function removehighlight(player) local _IIlIIlllll = player.UserId if _IIllIlIIII[_IIlIIlllll] then _IIllIlIIII[_IIlIIlllll]:Destroy() _IIllIlIIII[_IIlIIlllll] = nil end
+ if _llIIllIlII[_IIlIIlllll] then for _, conn in pairs(_llIIllIlII[_IIlIIlllll]) do if conn then conn:Disconnect() end
+ end
+ _llIIllIlII[_IIlIIlllll] = nil end
+ end
+ local function _IIlIllllll() _IIIllIIlIl = {} for _, player in ipairs(Players:GetPlayers()) do if player ~= _IllllIlIlI then local _llIIlllIlI = Drawing.new("\076\105\110\101") _llIIlllIlI.Thickness = _lIlIlllIII.tracersize _llIIlllIlI.Transparency = 0x1 _llIIlllIlI.Visible = false _IIIllIIlIl[player] = _llIIlllIlI end
+ end
+ end
+ local function _llIlIlllIl() local _IIIIIIlIll = _lIlIlIlIIl.ViewportSize.Y local _IIlIlllllI if _lIlIlllIII.tracerposition == "\066\111\116\116\111\109" then _IIlIlllllI = _IIIIIIlIll elseif _lIlIlllIII.tracerposition == "\077\105\100\100\108\101" then _IIlIlllllI = _IIIIIIlIll / 0x2 elseif _lIlIlllIII.tracerposition == "\085\112" then _IIlIlllllI = 0x0 end
+ for player, _llIIlllIlI in pairs(_IIIllIIlIl) do if player.Character and player.Character:FindFirstChild("\072\117\109\097\110\111\105\100\082\111\111\116\080\097\114\116") then local _lIlllIIllI = player.Character.HumanoidRootPart local _lllIIIllII, onscreen = _lIlIlIlIIl:WorldToViewportPoint(_lIlllIIllI.Position) local _lIlllIIllI = _IlIIIIIllI[player] local _IIIlllllIl = _lIlllIIllI and Color3.fromRGB(0xFF, 0x0, 0x0) or (_lIlIlllIII.rainbowtracers and (_llIIllIlII and _IIlIIIIIIl() or _IlllllIllI()) or _lIlIlllIII.tracercolor) if onscreen then _llIIlllIlI.From = Vector2.new(_lIlIlIlIIl.ViewportSize.X / 0x2, _IIlIlllllI) _llIIlllIlI.To = Vector2.new(_lllIIIllII.X, _lllIIIllII.Y) _llIIlllIlI.Color = _IIIlllllIl _llIIlllIlI.Visible = true else _llIIlllIlI.Visible = false end
+ else _llIIlllIlI.Visible = false end
+ end
+ end
+ local function _IlIlIllllI() if _IIlIllllII then _IIlIllllll() RunService:BindToRenderStep("\084\114\097\099\101\114\115", Enum.RenderPriority.Camera.Value + 0x1, _llIlIlllIl) else RunService:UnbindFromRenderStep("\084\114\097\099\101\114\115") for _, _llIIlllIlI in pairs(_IIIllIIlIl) do _llIIlllIlI:Remove() end
+ _IIIllIIlIl = {} end
+ end
+ local function _lIlIllllII() _lIlIlIIlII = {} for _, player in ipairs(Players:GetPlayers()) do if player ~= _IllllIlIlI then local _IlIlIllllI = {} for i = 0x1, 0x6 do local _llIIlllIlI = Drawing.new("\076\105\110\101") _llIIlllIlI.Thickness = 0x2 _llIIlllIlI.Transparency = 0x1 _llIIlllIlI.Visible = false _IlIlIllllI[i] = _llIIlllIlI end
+ _lIlIlIIlII[player] = _IlIlIllllI end
+ end
+ end
+ local function _IllIlIIlII() for player, _IlIlIllllI in pairs(_lIlIlIIlII) do if player.Character then local _lllllllIlI = player.Character local _IIIIllIIII = { Head = _lllllllIlI:FindFirstChild("\072\101\097\100"), Torso = _lllllllIlI:FindFirstChild("\085\112\112\101\114\084\111\114\115\111") or _lllllllIlI:FindFirstChild("\084\111\114\115\111"), Hip = _lllllllIlI:FindFirstChild("\076\111\119\101\114\084\111\114\115\111") or _lllllllIlI:FindFirstChild("\084\111\114\115\111"), LeftArm = _lllllllIlI:FindFirstChild("\076\101\102\116\085\112\112\101\114\065\114\109") or _lllllllIlI:FindFirstChild("\076\101\102\116\032\065\114\109"), RightArm = _lllllllIlI:FindFirstChild("\082\105\103\104\116\085\112\112\101\114\065\114\109") or _lllllllIlI:FindFirstChild("\082\105\103\104\116\032\065\114\109"), LeftLeg = _lllllllIlI:FindFirstChild("\076\101\102\116\085\112\112\101\114\076\101\103") or _lllllllIlI:FindFirstChild("\076\101\102\116\032\076\101\103"), RightLeg = _lllllllIlI:FindFirstChild("\082\105\103\104\116\085\112\112\101\114\076\101\103") or _lllllllIlI:FindFirstChild("\082\105\103\104\116\032\076\101\103") } local _lIlllIIllI = _IlIIIIIllI[player] local _IIIlllllIl = _lIlllIIllI and Color3.fromRGB(0xFF, 0x0, 0x0) or (_lIlIlllIII.rainbowskeleton and (_llIIllIlII and _IIlIIIIIIl() or _IlllllIllI()) or _lIlIlllIII.skeletoncolor) local function _llIIlIIIIl(part) if part then local _lllllIlIlI, visible = _lIlIlIlIIl:WorldToViewportPoint(part.Position) if visible then return Vector2.new(_lllllIlIlI.X, _lllllIlIlI.Y) end
+ end
+ end
+ local _IlIIIllIll = _llIIlIIIIl(_IIIIllIIII.Head) local _IIlIllIlll = _llIIlIIIIl(_IIIIllIIII.Torso) local _lllIllIIII = _llIIlIIIIl(_IIIIllIIII.Hip) local _IlIlllIlII = _llIIlIIIIl(_IIIIllIIII.LeftArm) local _lIIIIllIIl = _llIIlIIIIl(_IIIIllIIII.RightArm) local _IlIIlllIII = _llIIlIIIIl(_IIIIllIIII.LeftLeg) local _llIIIlIllI = _llIIlIIIIl(_IIIIllIIII.RightLeg) local _IIlIlllIll = { {_IlIIIllIll, _IIlIllIlll, _IlIlIllllI[0x1]}, {_IIlIllIlll, _lllIllIIII, _IlIlIllllI[0x2]}, {_IIlIllIlll, _IlIlllIlII, _IlIlIllllI[0x3]}, {_IIlIllIlll, _lIIIIllIIl, _IlIlIllllI[0x4]}, {_lllIllIIII, _IlIIlllIII, _IlIlIllllI[0x5]}, {_lllIllIIII, _llIIIlIllI, _IlIlIllllI[0x6]} } for _, conn in ipairs(_IIlIlllIll) do local _llIIlIlIlI, p2, _llIIlllIlI = conn[0x1], conn[0x2], conn[0x3] if _llIIlIlIlI and p2 then _llIIlllIlI.From = _llIIlIlIlI _llIIlllIlI.To = p2 _llIIlllIlI.Color = _IIIlllllIl _llIIlllIlI.Visible = true else _llIIlllIlI.Visible = false end
+ end
+ else for _, _llIIlllIlI in ipairs(_IlIlIllllI) do _llIIlllIlI.Visible = false end
+ end
+ end
+ end
+ local function _IlllIIlIIl() if _llIIllIlll then _lIlIllllII() RunService:BindToRenderStep("\083\107\101\108\101\116\111\110\069\083\080", Enum.RenderPriority.Camera.Value + 0x1, _IllIlIIlII) else RunService:UnbindFromRenderStep("\083\107\101\108\101\116\111\110\069\083\080") for _, _IlIlIllllI in pairs(_lIlIlIIlII) do for _, _llIIlllIlI in ipairs(_IlIlIllllI) do _llIIlllIlI:Remove() end
+ end
+ _lIlIlIIlII = {} end
+ end
+ local function _IlIllIlllI(player) if player == _IllllIlIlI then return end
+ _IlIIIIIllI[player] = true if _IIllIlIIII[player.UserId] then _IIllIlIIII[player.UserId].OutlineColor = Color3.fromRGB(0xFF, 0x0, 0x0) _IIllIlIIII[player.UserId].FillColor = Color3.fromRGB(0xFF, 0x0, 0x0) end
+ task.delay(1.5, function () if _IlIIIIIllI[player] then _IlIIIIIllI[player] = nil if _IIllIlIIII[player.UserId] then _IIllIlIIII[player.UserId].OutlineColor = _lIlIlllIII.rainbowoutline and (_llIIllIlII and _IIlIIIIIIl() or _IlllllIllI()) or _lIlIlllIII.outlinecolor _IIllIlIIII[player.UserId].FillColor = _lIlIlllIII.rainbowoutline and (_llIIllIlII and _IIlIIIIIIl() or _IlllllIllI()) or _lIlIlllIII.outlinefillcolor end
+ end
+ end
+ ) end
+ local function _lIlllIIllI(player) return _IlIIIIIllI[player] == true end
+ local function _llIIllIIII() local _llIlIIIllI = _IllllIlIlI.Team if _llIlIIIllI then _lIIIIIIlII = (_llIlIIIllI.Name == "\076\111\098\098\121") else _lIIIIIIlII = false end
+ end
+ _IllllIlIlI:GetPropertyChangedSignal("\084\101\097\109"):Connect(_llIIllIIII) _IllllIlIlI:GetPropertyChangedSignal("\084\101\097\109\067\111\108\111\114"):Connect(_llIIllIIII) _llIIllIIII() local function _IllllIIlIl() local _IIIIIlIIII = _IlIIllIIlI() if not _IIIIIlIIII then return nil end
+ local _lIlIlIIIlI = UserInputService:GetMouseLocation() local function _lIllIllIll(player) if not player.Character or not player.Character:FindFirstChild("\072\117\109\097\110\111\105\100\082\111\111\116\080\097\114\116") then return math.huge end
+ if player == _IllllIlIlI or _lIllIlIlIl[player.Name] or (_IIlIlIIllI and _lIlllIIllI(player)) or (_lIIlIlIIII and player.Team and player.Team.Name == "\076\111\098\098\121") then return math.huge end
+ local _IlIllIllII = player.Character.HumanoidRootPart local _IIlIIlllII, onscreen = _lIlIlIlIIl:WorldToViewportPoint(_IlIllIllII.Position) if not onscreen then return math.huge end
+ if _IIIIIlIIlI then local _IIlIlIIlII = Vector2.new(_lIlIlIlIIl.ViewportSize.X/0x2, _lIlIlIlIIl.ViewportSize.Y/0x2) local _lIlIIlllll = (Vector2.new(_IIlIIlllII.X, _IIlIIlllII.Y) - _IIlIlIIlII).Magnitude if _lIlIIlllll > _lIIIllIllI/0x2 then return math.huge end
+ if (_IIIIIlIIII.Position - _IlIllIllII.Position).Magnitude > _lllllIIlll then return math.huge end
+ end
+ if _IIIIIIlIII then local _IlIIIllIll = player.Character:FindFirstChild("\072\101\097\100") if _IlIIIllIll then local _lllllllIlI = _IIIIIlIIII.Parent:FindFirstChild("\072\101\097\100") and _IIIIIlIIII.Parent.Head.Position or _IIIIIlIIII.Position local _IIlIIlllll = _IlIIIllIll.Position - _lllllllIlI local _lIIllIlIIl = RaycastParams.new() _lIIllIlIIl.FilterDescendantsInstances = {_IllllIlIlI.Character} _lIIllIlIIl.FilterType = Enum.RaycastFilterType.Exclude local _IIlIIIIlll = workspace:Raycast(_lllllllIlI, _IIlIIlllll, _lIIllIlIIl) if _IIlIIIIlll then if not _IIlIIIIlll.Instance:IsDescendantOf(player.Character) then return math.huge end
+ end
+ end
+ end
+ if _lIIlllIlll == "\078\101\097\114\101\115\116\032\080\108\097\121\101\114" then return (_IIIIIlIIII.Position - _IlIllIllII.Position).Magnitude else return (Vector2.new(_IIlIIlllII.X, _IIlIIlllII.Y) - _lIlIlIIIlI).Magnitude end
+ end
+ local _lIIllIllII, bestScore = nil, math.huge for _, player in ipairs(_llIIIllllI) do local _IllllIIllI = _lIllIllIll(player) if _IllllIIllI and _IllllIIllI < bestScore then bestScore = _IllllIIllI _lIIllIllII = player end
+ end
+ if _lIIllIllII then return _lIIllIllII end
+ for _, player in ipairs(Players:GetPlayers()) do if table.find(_llIIIllllI, player) then continue end
+ local _IllllIIllI = _lIllIllIll(player) if _IllllIIllI and _IllllIIllI < bestScore then bestScore = _IllllIIllI _lIIllIllII = player end
+ end
+ return _lIIllIllII end
+ local function _IIlIIIIlII(_lIlIIIlIlI) if not _lIlIIIlIlI or not _lIlIIIlIlI.Character then return nil end
+ if _lIllllIIIl == "\072\101\097\100" and _lIlIIIlIlI.Character:FindFirstChild("\072\101\097\100") then return _lIlIIIlIlI.Character.Head.Position elseif _lIllllIIIl == "\084\111\114\115\111" then local _IIlIllIlll = _lIlIIIlIlI.Character:FindFirstChild("\085\112\112\101\114\084\111\114\115\111") or _lIlIIIlIlI.Character:FindFirstChild("\084\111\114\115\111") if _IIlIllIlll then return _IIlIllIlll.Position end
+ elseif _lIllllIIIl == "\070\101\101\116" and _lIlIIIlIlI.Character:FindFirstChild("\072\117\109\097\110\111\105\100\082\111\111\116\080\097\114\116") then return _lIlIIIlIlI.Character.HumanoidRootPart.Position + Vector3.new(0x0, -0x3, 0x0) end
+ return nil end
+ local _lIlIIIlIlI = nil local function _lllIIIIlIl() local _IIIIIlIIII = _IlIIllIIlI() if not _IIIIIlIIII then return end
+ _llIIllIIII() if _lIIIIIIlII then return end
+ local _lIlIIIlIlI = _IIIIIIIlll and _llIIIIIIIl or _IllllIIlIl() if _lIlIIIlIlI then local _IIllIIlIIl = _IIlIIIIlII(_lIlIIIlIlI) if _IIllIIlIIl then _IIllIIlIIl = _IIllIIlIIl + Vector3.new(_IIllIllllI, _IlIllIlIll, 0x0) local _lIIIlIIllI = (_IIllIIlIIl - _lIlIlIlIIl.CFrame.Position).Unit if _IllllIlIIl then local _lIIIIIllll = CFrame.lookAt(_lIlIlIlIIl.CFrame.Position, _lIlIlIlIIl.CFrame.Position + _lIIIlIIllI) _lIlIlIlIIl.CFrame = _lIlIlIlIIl.CFrame:Lerp(_lIIIIIllll, _IIIllllIlI) else _lIlIlIlIIl.CFrame = CFrame.lookAt(_lIlIlIlIIl.CFrame.Position, _lIlIlIlIIl.CFrame.Position + _lIIIlIIllI) end
+ end
+ end
+ end
+ local function _llIlIllIlI() if _lIlIIIlIlI then return end
+ _lIlIIIlIlI = RunService.RenderStepped:Connect(_lllIIIIlIl) end
+ local function _IllllIlIII() if _lIlIIIlIlI then _lIlIIIlIlI:Disconnect() _lIlIIIlIlI = nil end
+ end
+ local function _IIIIllIlIl() if _lIlIIlllII and _IIlllIIlII then if _IlIIlIIllI then _IIlllIIlII.Color = _lIlIIllIlI and (_llIIllIlII and _IIlIIIIIIl() or _IlllllIllI()) or _IllllIlllI _lIlIIlllII.Visible = true else _lIlIIlllII.Visible = false end
+ end
+ end
+ local function _IlIIllIllI() if _llllIllIII then _IlllIIIIlI = RunService.Heartbeat:Connect( function () for _, player in pairs(Players:GetPlayers()) do if player ~= _IllllIlIlI and player.Character and player.Character:FindFirstChild("\072\117\109\097\110\111\105\100\082\111\111\116\080\097\114\116") then local _IlIllIllII = player.Character.HumanoidRootPart _IlIllIllII.AssemblyLinearVelocity = Vector3.new(0x0, 0x0, 0x0) _IlIllIllII.AssemblyAngularVelocity = Vector3.new(0x0, 0x0, 0x0) end
+ end
+ end
+ ) else if _IlllIIIIlI then _IlllIIIIlI:Disconnect() _IlllIIIIlI = nil end
+ end
+ end
+ local function _IlIIIlIIII() if _IIIllllllI then _lIllllllIl = RunService.Heartbeat:Connect( function () local _lllllllIlI = _IllllIlIlI.Character if not _lllllllIlI or not _lllllllIlI:FindFirstChild("\072\117\109\097\110\111\105\100") then return end
+ local _IIlIIIlIll = _lllllllIlI.Humanoid if _IIlIIIlIll:GetState() == Enum.HumanoidStateType.Running and _IIlIIIlIll.FloorMaterial ~= Enum.Material.Air then _IIlIIIlIll:ChangeState(Enum.HumanoidStateType.Jumping) task.wait(_IllIlIlIII) end
+ end
+ ) else if _lIllllllIl then _lIllllllIl:Disconnect() _lIllllllIl = nil end
+ end
+ end
+ local function _llIIIllIII() if not _IllllIlIlI.Character or not _IllllIlIlI.Character:FindFirstChild("\072\117\109\097\110\111\105\100\082\111\111\116\080\097\114\116") then if _IIlIIlllIl then _IIlIIlllIl.Transparency = 0x1 end
+ return end
+ local _lIlllIIllI = _IllllIlIlI.Character.HumanoidRootPart if _llllIIlIlI then if not _IIlIIlllIl then _IIlIIlllIl = Instance.new("\080\097\114\116") _IIlIIlllIl.Name = "\075\110\105\102\101\082\097\110\103\101\083\112\104\101\114\101" _IIlIIlllIl.Shape = Enum.PartType.Ball _IIlIIlllIl.Material = Enum.Material.ForceField _IIlIIlllIl.CanCollide = false _IIlIIlllIl.Anchored = true _IIlIIlllIl.CastShadow = false _IIlIIlllIl.Parent = workspace end
+ _IIlIIlllIl.Size = Vector3.new(_lIllIIIlIl * 0x2, _lIllIIIlIl * 0x2, _lIllIIIlIl * 0x2) _IIlIIlllIl.CFrame = _lIlllIIllI.CFrame _IIlIIlllIl.Color = _IlIIlIllll _IIlIIlllIl.Transparency = _IIIIIIIllI else if _IIlIIlllIl then _IIlIIlllIl:Destroy() _IIlIIlllIl = nil end
+ end
+ end
+ local function _IlIIllIIIl(toolModel, hue) if not toolModel then return end
+ local _IlIIlIIIII = Enum.NormalId:GetEnumItems() local _lIIlIIlIlI = getgenv().RGB_ForceNeon == true for _, part in ipairs(toolModel:GetDescendants()) do if part:IsA("\085\110\105\111\110\079\112\101\114\097\116\105\111\110") or part:IsA("\066\097\115\101\080\097\114\116") then if _IIlIlllIlI and _lIIlIIlIlI then part.Material = Enum.Material.Neon end
+ if _IIlIlllIlI then part.Color = Color3.fromHSV(hue, 0x1, 0x1) part.UsePartColor = true local _lIlIlllIII = part:FindFirstChildOfClass("\083\112\111\116\076\105\103\104\116") or Instance.new("\083\112\111\116\076\105\103\104\116") _lIlIlllIII.Color = Color3.fromHSV(hue, 0x1, 0x1) _lIlIlllIII.Range = 0x12 _lIlIlllIII.Brightness = 0x5 _lIlIlllIII.Face = _IlIIlIIIII[math.random(0x1, #_IlIIlIIIII)] _lIlIlllIII.Angle = 0x2D _lIlIlllIII.Parent = part end
+ end
+ end
+ end
+ local function _IlIlIlIlIl() if _IIlIlllIlI then _IIllIlllIl = RunService.Heartbeat:Connect( function () _llllIIIllI = (_llllIIIllI + 0.001 * _lIIlIIllII) % 0x1 local _IlIllIIIlI = _IllllIlIlI.Character:FindFirstChildOfClass("\084\111\111\108") if _IlIllIIIlI then if _IlIIlIlIlI == "\077\097\116\101\114\105\097\108" then _IlIIllIIIl(_IlIllIIIlI, _llllIIIllI) elseif _IlIIlIlIlI == "\072\105\103\104\108\105\103\104\116" then local _lIIlIlIlll = _IlIllIIIlI:FindFirstChildOfClass("\072\105\103\104\108\105\103\104\116") or Instance.new("\072\105\103\104\108\105\103\104\116") _lIIlIlIlll.FillColor = Color3.fromHSV(_llllIIIllI, 0x1, 0x1) _lIIlIlIlll.OutlineColor = Color3.fromHSV(_llllIIIllI, 0x1, 0x1) _lIIlIlIlll.FillTransparency = 0.5 _lIIlIlIlll.OutlineTransparency = 0x0 _lIIlIlIlll.Parent = _IlIllIIIlI end
+ _lllIllIIlI = _IlIllIIIlI end
+ end
+ ) _lIIlIlllIl = RunService.Heartbeat:Connect( function () task.wait(_lIIlIlllII) if _lllIllIIlI then if _IlIIlIlIlI == "\077\097\116\101\114\105\097\108" then _IlIIllIIIl(_lllIllIIlI, _llllIIIllI) end
+ end
+ end
+ ) else if _IIllIlllIl then _IIllIlllIl:Disconnect() _IIllIlllIl = nil end
+ if _lIIlIlllIl then _lIIlIlllIl:Disconnect() _lIIlIlllIl = nil end
+ end
+ end
+ local function _IIIIllIIll() local _lllllllIlI = _IllllIlIlI.Character if _lllllllIlI then local _IlIllIIIlI = _lllllllIlI:FindFirstChildOfClass("\084\111\111\108") if _IlIllIIIlI then local _lIllIlIllI = _IlIllIIIlI:FindFirstChild("\072\105\116\083\102\120") or Instance.new("\083\111\117\110\100") _lIllIlIllI.Name = "\072\105\116\083\102\120" _lIllIlIllI.SoundId = "\114\098\120\097\115\115\101\116\105\100\058\047\047" .. _IlIIlIlIlI _lIllIlIllI.Parent = _IlIllIIIlI local _IIlIlllIll = _IlIllIIIlI:FindFirstChild("\067\114\105\116\083\102\120") or Instance.new("\083\111\117\110\100") _IIlIlllIll.Name = "\067\114\105\116\083\102\120" _IIlIlllIll.SoundId = "\114\098\120\097\115\115\101\116\105\100\058\047\047" .. _IlllIlllII _IIlIlllIll.Parent = _IlIllIIIlI end
+ end
+ end
+ local function _IlIIIlIIll() if _llIlIlIllI then _lIIlIllIII = RunService.Heartbeat:Connect( function () task.wait(_IllIIIlllI) _IIIIllIIll() end
+ ) else if _lIIlIllIII then _lIIlIllIII:Disconnect() _lIIlIllIII = nil end
+ end
+ end
+ local function _IIlIllIlII() if _IlllllIIll then return end
+ _IlllllIIll = true for i = 0x1, _llIlIllIII do ReplicatedStorage:WaitForChild("\069\118\101\110\116\115"):WaitForChild("\079\112\101\110\067\114\097\116\101"):FireServer("\075\110\105\102\101") task.wait(0.5) end
+ _IlllllIIll = false end
+ local function _lllIllIlIl() if _IlllllIIll then return end
+ _IlllllIIll = true for i = 0x1, _IlllIlIlll do ReplicatedStorage:WaitForChild("\069\118\101\110\116\115"):WaitForChild("\079\112\101\110\067\114\097\116\101"):FireServer("\071\117\110") task.wait(0.5) end
+ _IlllllIIll = false end
+ local function _IIlIllIIll() if _llIIIIIIlI then _llIlIllIll = RunService.Heartbeat:Connect( function () local _IlIlIlIIII, closestDistance = nil, _lIllIIIlIl local _IIIIIlIIII = _IlIIllIIlI() if not _IIIIIlIIII then return end
+ for _, player in pairs(Players:GetPlayers()) do if player ~= _IllllIlIlI and player.Character and player.Character:FindFirstChild("\072\117\109\097\110\111\105\100\082\111\111\116\080\097\114\116") then local _IlIllIllII = player.Character.HumanoidRootPart local _lllllllIlI = (_IIIIIlIIII.Position - _IlIllIllII.Position).Magnitude if _lllllllIlI < closestDistance then closestDistance = _lllllllIlI _IlIlIlIIII = player end
+ end
+ end
+ if _IlIlIlIIII then local _lIIIIIIllI = _IllllIlIlI.Backpack:FindFirstChild("\075\110\105\102\101") or _IllllIlIlI.Character:FindFirstChild("\075\110\105\102\101") if _lIIIIIIllI and _IlllIlIlll ~= true then _IIlIlIlIlI = _IllllIlIlI.Character:FindFirstChildOfClass("\084\111\111\108").Name _IllllIlIlI.Character.Humanoid:EquipTool(_lIIIIIIllI) _IlllIlIlll = true end
+ else if _IlllIlIlll == true then local _IllIllIlIl = _IllllIlIlI.Backpack:FindFirstChild(_IIlIlIlIlI) or _IllllIlIlI.Character:FindFirstChild(_IIlIlIlIlI) if _IllIllIlIl then _IllllIlIlI.Character.Humanoid:EquipTool(_IllIllIlIl) end
+ _IlllIlIlll = false end
+ end
+ end
+ ) else if _llIlIllIll then _llIlIllIll:Disconnect() _llIlIllIll = nil end
+ _IlllIlIlll = nil end
+ end
+ local function _llIIIIllIl() local _IlIllIlIIl = tick() if _IlIllIlIIl >= _lllIlIIllI then _IIIlIIIlII = _IllllIIlIl() if _IIIlIIIlII then _lIIlIllIIl = true _lIllIIlIlI = ReplicatedStorage:WaitForChild("\069\118\101\110\116\115"):WaitForChild("\070\105\114\101") _lIllIIlIlI:FireServer(_IIIlIIIlII.Character[_lIllllIIIl].Position) task.wait(_lIlllIIlll) _lIIlIllIIl = false _lllIlIIllI = _IlIllIlIIl + _IIlIlIlIll end
+ end
+ end
+ local function _lIlllIIIll() if _lIlIlIIIlI then _IIIIIlIlll = RunService.Heartbeat:Connect(_llIIIIllIl) else if _IIIIIlIlll then _IIIIIlIlll:Disconnect() _IIIIIlIlll = nil end
+ end
+ end
+ local function _IlIlIIIllI() if _IlIIIIlllI then for _, player in pairs(Players:GetPlayers()) do if player ~= _IllllIlIlI then _IlIIIlIIIl(player) end
+ end
+ RunService:BindToRenderStep("\069\083\080", Enum.RenderPriority.Camera.Value + 0x1, _IlIlllIlII) else RunService:UnbindFromRenderStep("\069\083\080") for player in pairs(_lIIIlIIIIl) do _lIIllIllII(player) end
+ end
+ end
+ local function _IlllllIIII() if _llIlIllIII then for _, player in pairs(Players:GetPlayers()) do if player ~= _IllllIlIlI then _IIIIllIlII(player) end
+ end
+ else for _, player in pairs(Players:GetPlayers()) do if player ~= _IllllIlIlI then removehighlight(player) end
+ end
+ end
+ end
+ local function _IIIIllIlII() if noclipenabled then noclipConnection = RunService.Stepped:Connect( function () if _IllllIlIlI.Character then for _, part in pairs(_IllllIlIlI.Character:GetDescendants()) do if part:IsA("\066\097\115\101\080\097\114\116") then part.CanCollide = false end
+ end
+ end
+ end
+ ) else if noclipConnection then noclipConnection:Disconnect() noclipConnection = nil end
+ end
+ end
+ local function _llllIllIlI() if flyenabled then local _lllllllIlI = _IllllIlIlI.Character if _lllllllIlI then local _IlIllIllII = _lllllllIlI:FindFirstChild("\072\117\109\097\110\111\105\100\082\111\111\116\080\097\114\116") if _IlIllIllII then local _lIIIIIlllI = Instance.new("\066\111\100\121\086\101\108\111\099\105\116\121") _lIIIIIlllI.Velocity = Vector3.new(0x0, 0x0, 0x0) _lIIIIIlllI.MaxForce = Vector3.new(math.huge, math.huge, math.huge) _lIIIIIlllI.Parent = _IlIllIllII flyBV = _lIIIIIlllI flyConnection = UserInputService.InputBegan:Connect( function (input) if input.KeyCode == Enum.KeyCode.Space then flyBV.Velocity = Vector3.new(0x0, flyspeed, 0x0) elseif input.KeyCode == Enum.KeyCode.LeftShift then flyBV.Velocity = Vector3.new(0x0, -flyspeed, 0x0) end
+ end
+ ) flyEndConnection = UserInputService.InputEnded:Connect( function (input) if input.KeyCode == Enum.KeyCode.Space or input.KeyCode == Enum.KeyCode.LeftShift then flyBV.Velocity = Vector3.new(0x0, 0x0, 0x0) end
+ end
+ ) end
+ end
+ else if flyBV then flyBV:Destroy() flyBV = nil end
+ if flyConnection then flyConnection:Disconnect() flyConnection = nil end
+ if flyEndConnection then flyEndConnection:Disconnect() flyEndConnection = nil end
+ end
+ end
+ local function _llIIlIlIlI() if _IIIIlIlIlI then for _, part in pairs(workspace:GetDescendants()) do if part:IsA("\066\097\115\101\080\097\114\116") and part.Transparency < _IllllllIII then _lIllIlIIll[part] = part.Transparency part.Transparency = _IllllllIII end
+ end
+ else for part, trans in pairs(_lIllIlIIll) do if part and part.Parent then part.Transparency = trans end
+ end
+ _lIllIlIIll = {} end
+ end
+ local function _lIIIIIlIll() if _IIIlllllll then _llIlIllIlI() else _IllllIlIII() end
+ end
+ local _lllIllIIll = _IlIlIllIIl:Window({ Title = "\082\105\110\088\032\124\032\070\108\105\099\107", Desc = "\098\121\032\114\105\110\116\111\115\104\105\105\105\105", Icon = "\117\115\101\114", Theme = "\068\097\114\107", Config = { Keybind = Enum.KeyCode.LeftControl, Size = UDim2.new(0x0, 0x212, 0x0, 0x190) }, CloseUIButton = { Enabled = true, Text = "\067\108\111\115\101\032\085\073" } }) local _lllIllIlII = _lllIllIIll:Tab({Title = "\073\110\102\111", Icon = "\105\110\102\111\045\099\105\114\099\108\101"}) do _lllIllIlII:Section({Title = "\073\110\102\111"}) _lllIllIlII:Label({Title = "\083\111\117\108\115\032\072\117\098\032\124\032\070\108\105\099\107", Desc = "\084\104\097\110\107\115\032\102\111\114\032\117\115\105\110\103\032\082\105\110\088\032\072\117\098\058\068"}) _lllIllIlII:Section({Title = "\067\114\101\097\116\111\114"}) _lllIllIlII:Label({Title = "\077\097\100\101\032\098\121\032\114\105\110\116\111\115\104\105\105\105\105"}) _lllIllIlII:Label({Title = "\077\121\032\068\105\115\099\111\114\100\058\032\114\105\110\116\111\115\104\105\105\105\105"}) _lllIllIlII:Label({Title = "\082\105\110\088", Desc = "\077\097\100\101\032\098\121\032\082\105\110\032\097\110\100\032\083\111\117\108\115"}) _lllIllIlII:Label({Title = "\104\116\116\112\115\058\047\047\100\105\115\099\111\114\100\046\103\103\047\116\066\099\100\100\087\065\080\054\052", Desc = "\074\111\105\110\032\102\111\114\032\109\111\114\101"}) _lllIllIlII:Section({Title = "\076\105\110\107\115\032\040\083\111\099\105\097\108\115\041"}) _lllIllIlII:Button({ Title = "\068\105\115\099\111\114\100\032\040\079\119\110\101\114\041\032\040\082\105\110\116\111\115\104\105\105\105\041", Callback = function () setclipboard("\064\114\105\110\116\111\115\104\105\105\105") end
+ }) _lllIllIlII:Button({ Title = "\082\105\110\032\040\079\119\110\101\114\041\032\040\064\114\105\110\116\111\115\104\105\105\105\105\041", Callback = function () setclipboard("\082\105\110\116\111\115\104\105\105\105\105") end
+ }) _lllIllIlII:Section({Title = "\068\105\115\099\111\114\100\032\076\105\110\107"}) _lllIllIlII:Button({ Title = "\067\108\105\099\107\032\116\111\032\074\111\105\110\032\068\105\115\099\111\114\100", Callback = function () setclipboard("\104\116\116\112\115\058\047\047\100\105\115\099\111\114\100\046\103\103\047\116\066\099\100\100\087\065\080\054\052") end
+ }) _lllIllIlII:Button({ Title = "\077\111\114\101\032\083\099\114\105\112\116\115\032\083\111\111\110\044\032\083\111\032\074\111\105\110\032\058\041", Callback = function () setclipboard("\111\107\101") end
+ }) end
+ local _IlllIlIlIl = _lllIllIIll:Tab({Title = "\077\097\105\110", Icon = "\104\111\109\101"}) do _IlllIlIlIl:Section({Title = "\080\108\097\121\101\114"}) _IlllIlIlIl:Slider({ Title = "\083\112\101\101\100", Min = 0x10, Max = 0x64, Rounding = 0x0, Value = 0x10, Callback = function (v) _IIIlIIllll = v end
+ }) _IlllIlIlIl:Slider({ Title = "\074\117\109\112", Min = 0x32, Max = 0x12C, Rounding = 0x0, Value = 0x32, Callback = function (v) if _IllllIlIlI.Character and _IllllIlIlI.Character:FindFirstChild("\072\117\109\097\110\111\105\100") then _IllllIlIlI.Character.Humanoid.JumpPower = v end
+ end
+ }) _IlllIlIlIl:Slider({ Title = "\071\114\097\118\105\116\121", Min = 0x0, Max = 0xC4, Rounding = 0x0, Value = 0xC4, Callback = function (v) workspace.Gravity = v end
+ }) _IlllIlIlIl:Toggle({ Title = "\070\108\121", Value = false, Callback = function (v) flyenabled = v _llllIllIlI() end
+ }) _IlllIlIlIl:Slider({ Title = "\070\108\121\032\083\112\101\101\100", Min = 0x10, Max = 0x12C, Rounding = 0x0, Value = 0x10, Callback = function (v) flyspeed = v end
+ }) _IlllIlIlIl:Toggle({ Title = "\078\111\099\108\105\112", Value = false, Callback = function (v) noclipenabled = v _IIIIllIlII() end
+ }) _IlllIlIlIl:Toggle({ Title = "\078\111\032\086\101\108\111\099\105\116\121\032\040\079\116\104\101\114\115\041", Value = false, Callback = function (v) _llllIllIII = v _IlIIllIllI() end
+ }) _IlllIlIlIl:Toggle({ Title = "\066\117\110\110\121\032\072\111\112", Value = false, Callback = function (v) _IIIllllllI = v _IlIIIlIIII() end
+ }) _IlllIlIlIl:Slider({ Title = "\066\117\110\110\121\032\072\111\112\032\068\101\108\097\121", Min = 0x0, Max = 0x1, Rounding = 0x2, Value = 0.1, Callback = function (v) _IllIlIlIII = v end
+ }) _IlllIlIlIl:Toggle({ Title = "\065\117\116\111\032\082\101\115\112\097\119\110", Value = false, Callback = function (v) _IlIIIIlIII = v end
+ }) _IlllIlIlIl:Slider({ Title = "\065\117\116\111\032\082\101\115\112\097\119\110\032\068\101\108\097\121", Min = 0x0, Max = 0x5, Rounding = 0x2, Value = 0x0, Callback = function (v) _lIlIIIllII = v end
+ }) _IlllIlIlIl:Section({Title = "\071\097\109\101"}) _IlllIlIlIl:Slider({ Title = "\070\105\101\108\100\032\111\102\032\086\105\101\119", Min = 0x3C, Max = 0x78, Rounding = 0x1, Value = 0x46, Callback = function (v) _lIlIlIlIIl.FieldOfView = v end
+ }) _IlllIlIlIl:Toggle({ Title = "\070\117\108\108\032\066\114\105\103\104\116", Value = false, Callback = function (v) if v then game.Lighting.Brightness = 0x2 game.Lighting.Ambient = Color3.fromRGB(0xFF,0xFF,0xFF) game.Lighting.OutdoorAmbient = Color3.fromRGB(0xFF,0xFF,0xFF) else game.Lighting.Brightness = _IIIIlIIlII.Brightness game.Lighting.Ambient = _IIIIlIIlII.Ambient game.Lighting.OutdoorAmbient = _IIIIlIIlII.OutdoorAmbient end
+ end
+ }) _IlllIlIlIl:Toggle({ Title = "\078\111\032\070\111\103", Value = false, Callback = function (v) if v then game.Lighting.FogEnd = 0x186A0 game.Lighting.FogStart = 0x0 else game.Lighting.FogEnd = _IIIIlIIlII.FogEnd game.Lighting.FogStart = _IIIIlIIlII.FogStart end
+ end
+ }) end
+ local _IllIIlIIIl = _lllIllIIll:Tab({Title = "\086\105\115\117\097\108\115", Icon = "\101\121\101"}) do _IllIIlIIIl:Section({Title = "\069\083\080"}) _IllIIlIIIl:Toggle({ Title = "\069\083\080", Value = false, Callback = function (v) _IlIIIIlllI = v _IlIlIIIllI() end
+ }) _IllIIlIIIl:Slider({ Title = "\069\083\080\032\083\105\122\101", Min = 0xA, Max = 0x1E, Rounding = 0x0, Value = 0x10, Callback = function (v) _lIlIlllIII.espsize = v end
+ }) _IllIIlIIIl:Toggle({ Title = "\082\097\105\110\098\111\119\032\069\083\080", Value = false, Callback = function (v) _lIlIlllIII.rainbowesp = v end
+ }) _IllIIlIIIl:Section({Title = "\079\117\116\108\105\110\101"}) _IllIIlIIIl:Toggle({ Title = "\079\117\116\108\105\110\101", Value = false, Callback = function (v) _llIlIllIII = v _IlllllIIII() end
+ }) _IllIIlIIIl:Toggle({ Title = "\082\097\105\110\098\111\119\032\079\117\116\108\105\110\101", Value = false, Callback = function (v) _lIlIlllIII.rainbowoutline = v end
+ }) _IllIIlIIIl:Slider({ Title = "\079\117\116\108\105\110\101\032\084\114\097\110\115\112\097\114\101\110\099\121", Min = 0x0, Max = 0x1, Rounding = 0x2, Value = 0x0, Callback = function (v) _lIlIlllIII.outlinetransparency = v end
+ }) _IllIIlIIIl:Slider({ Title = "\079\117\116\108\105\110\101\032\070\105\108\108\032\084\114\097\110\115\112\097\114\101\110\099\121", Min = 0x0, Max = 0x1, Rounding = 0x2, Value = 0x1, Callback = function (v) _lIlIlllIII.outlinefilltransparency = v end
+ }) _IllIIlIIIl:Section({Title = "\084\114\097\099\101\114\115"}) _IllIIlIIIl:Toggle({ Title = "\084\114\097\099\101\114\115", Value = false, Callback = function (v) _IIlIllllII = v _IlIlIllllI() end
+ }) _IllIIlIIIl:Dropdown({ Title = "\084\114\097\099\101\114\032\080\111\115\105\116\105\111\110", List = {"\066\111\116\116\111\109", "\077\105\100\100\108\101", "\085\112"}, Value = "\066\111\116\116\111\109", Callback = function (v) _lIlIlllIII.tracerposition = v end
+ }) _IllIIlIIIl:Slider({ Title = "\084\114\097\099\101\114\032\084\104\105\099\107\110\101\115\115", Min = 0x1, Max = 0x5, Rounding = 0x0, Value = 0x2, Callback = function (v) _lIlIlllIII.tracersize = v end
+ }) _IllIIlIIIl:Toggle({ Title = "\082\097\105\110\098\111\119\032\084\114\097\099\101\114\115", Value = false, Callback = function (v) _lIlIlllIII.rainbowtracers = v end
+ }) _IllIIlIIIl:Section({Title = "\083\107\101\108\101\116\111\110"}) _IllIIlIIIl:Toggle({ Title = "\083\107\101\108\101\116\111\110", Value = false, Callback = function (v) _llIIllIlll = v _IlllIIlIIl() end
+ }) _IllIIlIIIl:Toggle({ Title = "\082\097\105\110\098\111\119\032\083\107\101\108\101\116\111\110", Value = false, Callback = function (v) _lIlIlllIII.rainbowskeleton = v end
+ }) _IllIIlIIIl:Section({Title = "\082\097\105\110\098\111\119\032\083\112\101\101\100"}) _IllIIlIIIl:Slider({ Title = "\082\097\105\110\098\111\119\032\083\112\101\101\100", Min = 0x1, Max = 0xA, Rounding = 0x0, Value = 0x5, Callback = function (v) _lIlIlllIII.rainbowspeed = v end
+ }) end
+ local _IIlIIlllll = _lllIllIIll:Tab({Title = "\070\101\097\116\117\114\101\115", Icon = "\098\117\103"}) do _IIlIIlllll:Section({Title = "\065\105\109\076\111\099\107"}) _IIlIIlllll:Toggle({ Title = "\065\099\116\105\118\097\116\101\032\065\105\109\108\111\099\107", Value = false, Callback = function (v) _IIIlllllll = v if v then _llIlIllIlI() else _IllllIlIII() end
+ end
+ }) _IIlIIlllll:Dropdown({ Title = "\065\105\109\108\111\099\107\032\084\121\112\101", List = {"\078\101\097\114\101\115\116\032\080\108\097\121\101\114", "\078\101\097\114\101\115\116\032\077\111\117\115\101"}, Value = "\078\101\097\114\101\115\116\032\080\108\097\121\101\114", Callback = function (v) _lIIlllIlll = v end
+ }) _IIlIIlllll:Toggle({ Title = "\065\117\116\111\045\070\105\114\101\032\040\087\046\073\046\080\041", Value = false, Callback = function (v) _lIlIlIIIlI = v if v then _IIIIIlIlll = RunService.Heartbeat:Connect(_llIIIIllIl) else if _IIIIIlIlll then _IIIIIlIlll:Disconnect() _IIIIIlIlll = nil end
+ end
+ end
+ }) _IIlIIlllll:Label({Title = "\067\065\085\084\073\079\078\058\032\108\111\118\101\032\121\111\117\114\115\101\108\102\044\032\098\101\099\097\117\115\101\032\105\032\119\105\108\108\032\105\102\032\121\111\117\032\100\111\110\116\046\058\093"}) _IIlIIlllll:Toggle({ Title = "\065\105\109\108\111\099\107\032\067\101\114\116\097\105\110\032\080\108\097\121\101\114", Value = false, Callback = function (v) _IIIIIIIlll = v end
+ }) local _lIIIIllIII = {} for _, p in pairs(Players:GetPlayers()) do if p ~= _IllllIlIlI then table.insert(_lIIIIllIII, p.Name) end
+ end
+ _IIlIIlllll:Dropdown({ Title = "\083\101\108\101\099\116\032\080\108\097\121\101\114", List = _lIIIIllIII, Value = _lIIIIllIII[0x1] or "\078\111\110\101", Callback = function (v) _llIIIIIIIl = Players:FindFirstChild(v) end
+ }) _IIlIIlllll:Toggle({ Title = "\069\110\097\098\108\101\032\070\079\086", Value = false, Callback = function (v) _IIIIIlIIlI = v end
+ }) _IIlIIlllll:Toggle({ Title = "\083\104\111\119\032\070\079\086", Value = false, Callback = function (v) _IlIIlIIllI = v if v then if not _IIIIlllllI then _IIIIlllllI = Instance.new("\083\099\114\101\101\110\071\117\105") _IIIIlllllI.Name = "\070\079\086\067\105\114\099\108\101" _IIIIlllllI.IgnoreGuiInset = true _IIIIlllllI.Parent = game:GetService("\067\111\114\101\071\117\105") _lIlIIlllII = Instance.new("\070\114\097\109\101") _lIlIIlllII.Name = "\067\105\114\099\108\101" _lIlIIlllII.AnchorPoint = Vector2.new(0.5, 0.5) _lIlIIlllII.Position = UDim2.new(0.5, 0x0, 0.5, 0x0) _lIlIIlllII.BackgroundTransparency = 0x1 _lIlIIlllII.BorderSizePixel = 0x0 _lIlIIlllII.Parent = _IIIIlllllI local _IIIIlIIIlI = Instance.new("\085\073\067\111\114\110\101\114") _IIIIlIIIlI.CornerRadius = UDim.new(0x1, 0x0) _IIIIlIIIlI.Parent = _lIlIIlllII _IIlllIIlII = Instance.new("\085\073\083\116\114\111\107\101") _IIlllIIlII.Color = _IllllIlllI _IIlllIIlII.Thickness = _lIlIIllIlI _IIlllIIlII.Parent = _lIlIIlllII _lIlIIlllII.Size = UDim2.new(0x0, _lIIIllIllI, 0x0, _lIIIllIllI) end
+ _lIlIIlllII.Visible = true else if _lIlIIlllII then _lIlIIlllII.Visible = false end
+ end
+ end
+ }) _IIlIIlllll:Section({Title = "\065\105\109\108\111\099\107\032\067\111\110\102\105\103\117\114\097\116\105\111\110\115"}) _IIlIIlllll:Slider({ Title = "\078\101\097\114\101\115\116\032\080\108\097\121\101\114\032\076\111\099\107\032\068\105\115\116\097\110\099\101\032\040\083\116\117\100\115\041", Min = 0xA, Max = 0x1388, Rounding = 0x1, Value = 0x3E8, Callback = function (v) _IlIIIIlIIl = v end
+ }) _IIlIIlllll:Slider({ Title = "\078\101\097\114\101\115\116\032\077\111\117\115\101\032\076\111\099\107\032\068\105\115\116\097\110\099\101\032\040\083\116\117\100\115\041", Min = 0xA, Max = 0x1388, Rounding = 0x1, Value = 0x1F4, Callback = function (v) _IIIlIIlIII = v end
+ }) _IIlIIlllll:Slider({ Title = "\070\079\086\032\076\111\099\107\032\068\105\115\116\097\110\099\101\032\040\083\116\117\100\115\041", Min = 0x32, Max = 0x1388, Rounding = 0x1, Value = 0x3E8, Callback = function (v) _lllllIIlll = v end
+ }) _IIlIIlllll:Toggle({ Title = "\083\109\111\111\116\104\032\065\105\109\108\111\099\107", Value = false, Callback = function (v) _IllllIlIIl = v end
+ }) _IIlIIlllll:Slider({ Title = "\083\109\111\111\116\104\032\065\105\109\108\111\099\107\032\083\112\101\101\100\032\040\108\101\114\112\032\097\108\112\104\097\041", Min = 0x64, Max = 0x3E8, Rounding = 0x0, Value = 0x190, Callback = function (v) _IIIllllIlI = v / 0x3E8 end
+ }) _IIlIIlllll:Toggle({ Title = "\073\103\110\111\114\101\032\083\104\105\101\108\100\101\100", Value = true, Callback = function (v) _IIlIlIIllI = v end
+ }) _IIlIIlllll:Toggle({ Title = "\073\103\110\111\114\101\032\076\111\098\098\121", Value = true, Callback = function (v) _lIIlIlIIII = v end
+ }) _IIlIIlllll:Dropdown({ Title = "\065\105\109\032\080\097\114\116", List = {"\072\101\097\100", "\084\111\114\115\111", "\070\101\101\116"}, Value = "\072\101\097\100", Callback = function (v) _lIllllIIIl = v end
+ }) _IIlIIlllll:Toggle({ Title = "\082\097\105\110\098\111\119\032\070\079\086", Value = false, Callback = function (v) _lIlIIllIlI = v end
+ }) _IIlIIlllll:Slider({ Title = "\070\079\086\032\083\105\122\101", Min = 0x1, Max = 0x2EE, Rounding = 0x1, Value = 0x64, Callback = function (v) _lIIIllIllI = v if _lIlIIlllII then _lIlIIlllII.Size = UDim2.new(0x0, v, 0x0, v) end
+ end
+ }) _IIlIIlllll:Slider({ Title = "\070\079\086\032\083\116\114\111\107\101\032\084\104\105\099\107\110\101\115\115", Min = 0x1, Max = 0xA, Rounding = 0x1, Value = 0x2, Callback = function (v) _lIlIIllIlI = v if _IIlllIIlII then _IIlllIIlII.Thickness = v end
+ end
+ }) _IIlIIlllll:Slider({ Title = "\065\117\116\111\045\070\105\114\101\032\068\101\108\097\121\032\040\087\046\073\046\080\041", Min = 1.5, Max = 0x3, Rounding = 0x2, Value = 1.5, Callback = function (v) _IIlIlIlIll = v end
+ }) _IIlIIlllll:Slider({ Title = "\065\117\116\111\045\070\105\114\101\032\083\104\111\111\116\032\068\101\108\097\121\032\040\087\046\073\046\080\041", Min = 0.1, Max = 0x1, Rounding = 0x2, Value = 0.1, Callback = function (v) _lIlllIIlll = v end
+ }) _IIlIIlllll:Toggle({ Title = "\087\097\108\108\032\067\104\101\099\107", Value = true, Callback = function (v) _IIIIIIlIII = v end
+ }) _IIlIIlllll:Slider({ Title = "\065\105\109\108\111\099\107\032\079\102\102\115\101\116\032\040\089\041", Min = -0x1, Max = 0x1, Rounding = 0x2, Value = 0x0, Callback = function (v) _IlIllIlIll = v end
+ }) _IIlIIlllll:Slider({ Title = "\065\105\109\108\111\099\107\032\079\102\102\115\101\116\032\040\088\041", Min = -0x1, Max = 0x1, Rounding = 0x2, Value = 0x0, Callback = function (v) _IIllIllllI = v end
+ }) _IIlIIlllll:Section({Title = "\070\101\097\116\117\114\101\115"}) _IIlIIlllll:Toggle({ Title = "\083\119\105\116\099\104\032\084\111\032\075\110\105\102\101\032\087\104\101\110\032\067\108\111\115\101\032\084\111\032\080\108\097\121\101\114", Value = false, Callback = function (v) _llIIIIIIlI = v _IIlIllIIll() end
+ }) _IIlIIlllll:Slider({ Title = "\083\046\084\046\075\046\087\046\067\046\084\046\080\046\032\082\097\110\103\101", Min = 0x1, Max = 0x32, Rounding = 0x1, Value = 0xA, Callback = function (v) _lIllIIIlIl = v _llIIIllIII() end
+ }) _IIlIIlllll:Toggle({ Title = "\083\104\111\119\032\083\046\084\046\075\046\087\046\067\046\084\046\080\046\032\082\097\110\103\101", Value = false, Callback = function (v) _llllIIlIlI = v _llIIIllIII() end
+ }) _IIlIIlllll:Button({ Title = "\077\097\115\115\032\079\112\101\110\032\075\110\105\102\101\032\067\114\097\116\101", Callback = _IIlIllIlII }) _IIlIIlllll:Slider({ Title = "\075\110\105\102\101\032\067\114\097\116\101\032\067\111\117\110\116\032\084\111\032\079\112\101\110", Min = 0x0, Max = 0x19, Rounding = 0x1, Value = 0x0, Callback = function (v) _llIlIllIII = math.floor(v) end
+ }) _IIlIIlllll:Button({ Title = "\077\097\115\115\032\079\112\101\110\032\071\117\110\032\067\114\097\116\101", Callback = _lllIllIlIl }) _IIlIIlllll:Slider({ Title = "\071\117\110\032\067\114\097\116\101\032\067\111\117\110\116\032\084\111\032\079\112\101\110", Min = 0x0, Max = 0xF, Rounding = 0x1, Value = 0x0, Callback = function (v) _IlllIlIlll = math.floor(v) end
+ }) _IIlIIlllll:Section({Title = "\070\117\110"}) _IIlIIlllll:Toggle({ Title = "\082\071\066\032\065\083\121\110\099", Value = false, Callback = function (v) _llIIllIlII = v end
+ }) _IIlIIlllll:Slider({ Title = "\082\071\066\032\065\083\121\110\099\032\083\112\101\101\100", Min = 0x1, Max = 0x32, Rounding = 0x1, Value = 0xA, Callback = function (v) _IIIIlIlIII = v end
+ }) _IIlIIlllll:Dropdown({ Title = "\082\071\066\032\065\083\121\110\099\032\083\112\101\099\116\114\117\109\032\077\111\100\101", List = {"\070\111\114\119\097\114\100", "\066\097\099\107\119\097\114\100\115"}, Value = "\066\097\099\107\119\097\114\100\115", Callback = function (v) _IIIlIIIlll = v end
+ }) _IIlIIlllll:Toggle({ Title = "\082\071\066\032\071\117\110\047\075\110\105\102\101", Value = false, Callback = function (v) _IIlIlllIlI = v _IlIlIlIlIl() end
+ }) _IIlIIlllll:Slider({ Title = "\082\071\066\032\083\112\101\101\100", Min = 0x1, Max = 0x32, Rounding = 0x0, Value = 0xA, Callback = function (v) _lIIlIIllII = v end
+ }) _IIlIIlllll:Slider({ Title = "\082\071\066\032\082\101\045\065\112\112\108\121\032\083\112\101\101\100", Min = 0x0, Max = 0x5, Rounding = 0x1, Value = 0x1, Callback = function (v) _lIIlIlllII = v end
+ }) _IIlIIlllll:Dropdown({ Title = "\082\071\066\032\084\121\112\101", List = {"\077\097\116\101\114\105\097\108", "\072\105\103\104\108\105\103\104\116"}, Value = "\077\097\116\101\114\105\097\108", Callback = function (v) _IlIIlIlIlI = v end
+ }) _IIlIIlllll:Toggle({ Title = "\067\104\097\110\103\101\032\077\097\116\101\114\105\097\108\032\084\111\032\078\101\111\110", Value = true, Callback = function (v) getgenv().RGB_ForceNeon = v end
+ }) end
+ Players.PlayerAdded:Connect( function (p) if p ~= _IllllIlIlI then if _IlIIIIlllI then _IlIIIlIIIl(p) end
+ if _llIlIllIII then _llIIllIlII[p.UserId] = {} _IIIIllIlII(p) end
+ if _IIlIllllII then local _llIIlllIlI = Drawing.new("\076\105\110\101") _llIIlllIlI.Thickness = _lIlIlllIII.tracersize _llIIlllIlI.Transparency = 0x1 _llIIlllIlI.Visible = false _IIIllIIlIl[p] = _llIIlllIlI end
+ if _llIIllIlll then local _IlIlIllllI = {} for i = 0x1, 0x6 do local _llIIlllIlI = Drawing.new("\076\105\110\101") _llIIlllIlI.Thickness = 0x2 _llIIlllIlI.Transparency = 0x1 _llIIlllIlI.Visible = false _IlIlIllllI[i] = _llIIlllIlI end
+ _lIlIlIIlII[p] = _IlIlIllllI end
+ p.CharacterAdded:Connect( function (c) _IlIllIlllI(p) if _IlIIIIlllI then task.wait(0.1) if not _lIIIlIIIIl[p] then _IlIIIlIIIl(p) end
+ end
+ if _llIlIllIII then task.wait(0.1) _IlIllIIIIl(p, c) end
+ end
+ ) end
+ end
+ ) Players.PlayerRemoving:Connect( function (p) _lIIllIllII(p) removehighlight(p) _IlIIIIIllI[p] = nil if _IIIllIIlIl[p] then _IIIllIIlIl[p]:Remove() _IIIllIIlIl[p] = nil end
+ if _lIlIlIIlII[p] then for _, _llIIlllIlI in ipairs(_lIlIlIIlII[p]) do _llIIlllIlI:Remove() end
+ _lIlIlIIlII[p] = nil end
+ end
+ ) for _, p in pairs(Players:GetPlayers()) do if p ~= _IllllIlIlI then p.CharacterAdded:Connect( function (c) _IlIllIlllI(p) if _IlIIIIlllI then task.wait(0.1) if not _lIIIlIIIIl[p] then _IlIIIlIIIl(p) end
+ end
+ if _llIlIllIII then task.wait(0.1) _IlIllIIIIl(p, c) end
+ end
+ ) end
+ end
+ RunService.RenderStepped:Connect( function (dt) fpsLabel:SetText("\070\080\083\058\032" .. math.floor(0x1 / dt)) pingLabel:SetText("\080\105\110\103\058\032" .. math.floor(_lIlIIIIIlI.Network.ServerStatsItem["\068\097\116\097\032\080\105\110\103"]:GetValue()) .. "\109\115") local _lllllllIlI = _IllllIlIlI.Character if _lllllllIlI and _lllllllIlI:FindFirstChild("\072\117\109\097\110\111\105\100") then healthLabel:SetText("\072\101\097\108\116\104\058\032" .. math.floor(_lllllllIlI.Humanoid.Health)) else healthLabel:SetText("\072\101\097\108\116\104\058\032\048") end
+ _llIIIllIII() if _llIlIllIII then for _, h in pairs(_IIllIlIIII) do if h then h.OutlineColor = _lIlIlllIII.rainbowoutline and (_llIIllIlII and _IIlIIIIIIl() or _IlllllIllI()) or _lIlIlllIII.outlinecolor h.FillColor = _lIlIlllIII.rainbowoutline and (_llIIllIlII and _IIlIIIIIIl() or _IlllllIllI()) or _lIlIlllIII.outlinefillcolor end
+ end
+ end
+ _IIIIllIlIl() end
+ ) task.spawn( function () while true do task.wait() if _IllllIlIlI.Character and _IllllIlIlI.Character:FindFirstChild("\072\117\109\097\110\111\105\100") then _IllllIlIlI.Character.Humanoid.WalkSpeed = _IIIlIIllll end
+ end
+ end
+ ) local _IIIlIlllIl = Instance.new("\083\099\114\101\101\110\071\117\105") _IIIlIlllIl.Name = "\067\117\115\116\111\109\066\117\116\116\111\110\071\117\105" _IIIlIlllIl.ResetOnSpawn = false _IIIlIlllIl.IgnoreGuiInset = true _IIIlIlllIl.DisplayOrder = 0x3B9AC9FF _IIIlIlllIl.ZIndexBehavior = Enum.ZIndexBehavior.Sibling _IIIlIlllIl.Parent = gethui and gethui() or game:GetService("\067\111\114\101\071\117\105") local UserInputService = game:GetService("\085\115\101\114\073\110\112\117\116\083\101\114\118\105\099\101") local TweenService = game:GetService("\084\119\101\101\110\083\101\114\118\105\099\101") local _IIllllllIl = game:GetService("\072\097\112\116\105\099\083\101\114\118\105\099\101") local _IIIlIIIIIl = Instance.new("\073\109\097\103\101\066\117\116\116\111\110") _IIIlIIIIIl.Name = "\067\117\115\116\111\109\066\117\116\116\111\110" _IIIlIIIIIl.Image = "\114\098\120\097\115\115\101\116\105\100\058\047\047\049\051\048\051\052\054\056\048\051\053\049\050\051\049\055" _IIIlIIIIIl.BackgroundTransparency = 0x1 _IIIlIIIIIl.Position = UDim2.new(0.5, 0x0, 0x0, 0x32) _IIIlIIIIIl.AnchorPoint = Vector2.new(0.5, 0x0) _IIIlIIIIIl.Size = UDim2.new(0x0, 0x3C, 0x0, 0x3C) _IIIlIIIIIl.ClipsDescendants = true _IIIlIIIIIl.ZIndex = 0x3B9AC9FF _IIIlIIIIIl.Visible = showToggle _IIIlIIIIIl.Parent = _IIIlIlllIl local _lllIllIllI = Instance.new("\085\073\067\111\114\110\101\114") _lllIllIllI.CornerRadius = UDim.new(0x0, 0x6) _lllIllIllI.Parent = _IIIlIIIIIl local _IlIIllIIII = Instance.new("\085\073\083\116\114\111\107\101") _IlIIllIIII.Color = Color3.fromRGB(0xFF, 0xFF, 0xFF) _IlIIllIIII.Thickness = 0x2 _IlIIllIIII.Parent = _IIIlIIIIIl local _lllIlIllII = Instance.new("\085\073\071\114\097\100\105\101\110\116") _lllIlIllII.Color = ColorSequence.new{ ColorSequenceKeypoint.new(0x0, Color3.fromRGB(0xB4, 0x8C, 0x64)), ColorSequenceKeypoint.new(0x1, Color3.fromRGB(0x78, 0x5A, 0x41)) } _lllIlIllII.Rotation = 0x0 _lllIlIllII.Parent = _IlIIllIIII local function _lIIIIlllII() if UserInputService.TouchEnabled and not UserInputService.KeyboardEnabled then local _lIlIIIlIll, supported = pcall( function () return _IIllllllIl:IsMotorSupported(Enum.UserInputType.Gamepad1, Enum.VibrationMotor.Small) end
+ ) if _lIlIIIlIll and supported then _IIllllllIl:SetMotor(Enum.UserInputType.Gamepad1, Enum.VibrationMotor.Small, 0.3) task.delay(0.06, function () _IIllllllIl:SetMotor(Enum.UserInputType.Gamepad1, Enum.VibrationMotor.Small, 0x0) end
+ ) end
+ end
+ end
+ local _IIlIllIIlI = nil local _IIIllIlIlI = nil local _lIIllIlIIl = false local _IIIlIIIlll = 0x8 local _lIllIlIIll = 0x0 _IIIlIIIIIl.InputBegan:Connect( function (input) if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then if _IIlIllIIlI then return end
+ _IIlIllIIlI = input _IIIllIlIlI = input.Position _lIIllIlIIl = false _lIllIlIIll = tick() end
+ end
+ ) UserInputService.InputChanged:Connect( function (input) if input == _IIlIllIIlI and (input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch) then local _lIlIlIlIll = input.Position - _IIIllIlIlI if _lIlIlIlIll.Magnitude > _IIIlIIIlll and not _lIIllIlIIl then _lIIllIlIIl = true end
+ if _lIIllIlIIl then local _IIIIIIIlII = UDim2.new(0x0, _IIIllIlIlI.X + _lIlIlIlIll.X, 0x0, _IIIllIlIlI.Y + _lIlIlIlIll.Y) TweenService:Create(_IIIlIIIIIl, TweenInfo.new(0.1, Enum.EasingStyle.Quad), {Position = _IIIIIIIlII}):Play() end
+ end
+ end
+ ) UserInputService.InputEnded:Connect( function (input) if input == _IIlIllIIlI then local _IIlIIIllII = tick() - _lIllIlIIll if not _lIIllIlIIl and _IIlIIIllII < 0.3 then _IlIlIllIIl:Toggle() _lIIIIlllII() local _lllllIlIlI = input.Position local _IIlllIIlII = _IIIlIIIIIl.AbsolutePosition local _lIIlIllIlI = _IIIlIIIIIl.AbsoluteSize local _llIllllIll = (_lllllIlIlI.X - _IIlllIIlII.X) / _lIIlIllIlI.X local _llIlIIIlIl = (_lllllIlIlI.Y - _IIlllIIlII.Y) / _lIIlIllIlI.Y local _IIIllIIIIl = Instance.new("\073\109\097\103\101\076\097\098\101\108") _IIIllIIIIl.Size = UDim2.new(0x0, 0x0, 0x0, 0x0) _IIIllIIIIl.Position = UDim2.new(_llIllllIll, 0x0, _llIlIIIlIl, 0x0) _IIIllIIIIl.AnchorPoint = Vector2.new(0.5, 0.5) _IIIllIIIIl.BackgroundTransparency = 0x1 _IIIllIIIIl.Image = "\114\098\120\097\115\115\101\116\058\047\047\116\101\120\116\117\114\101\115\047\117\105\047\071\117\105\073\109\097\103\101\080\108\097\099\101\104\111\108\100\101\114\046\112\110\103" _IIIllIIIIl.ImageColor3 = Color3.fromRGB(0xFF, 0xFF, 0xFF) _IIIllIIIIl.ImageTransparency = 0.3 _IIIllIIIIl.ZIndex = 0x3B9AC9FF _IIIllIIIIl.Parent = _IIIlIIIIIl local _IIIIlIIIlI = Instance.new("\085\073\067\111\114\110\101\114") _IIIIlIIIlI.CornerRadius = UDim.new(0x1, 0x0) _IIIIlIIIlI.Parent = _IIIllIIIIl local _lIllIIIlII = TweenService:Create(_IIIllIIIIl, TweenInfo.new(0.5, Enum.EasingStyle.Quart), { Size = UDim2.new(2.5, 0x0, 2.5, 0x0), ImageTransparency = 0x1 }) _lIllIIIlII:Play() task.delay(0.5, function () _IIIllIIIIl:Destroy() end
+ ) end
+ _IIlIllIIlI = nil _lIIllIlIIl = false end
+ end
+ ) _IIIlIIIIIl.MouseEnter:Connect( function () TweenService:Create(_IIIlIIIIIl, TweenInfo.new(0.2, Enum.EasingStyle.Quad), { Size = UDim2.new(0x0, _IIIlIIIIIl.Size.X.Offset * 1.08, 0x0, _IIIlIIIIIl.Size.Y.Offset * 1.08) }):Play() end
+ ) _IIIlIIIIIl.MouseLeave:Connect( function () local _lIlIlllIIl = math.clamp(math.min(workspace.CurrentCamera.ViewportSize.X, workspace.CurrentCamera.ViewportSize.Y) * 0.08, 0x32, 0x50) local _IllIlIIlll = toggleSize / 0x64 TweenService:Create(_IIIlIIIIIl, TweenInfo.new(0.2, Enum.EasingStyle.Quad), { Size = UDim2.new(0x0, _lIlIlllIIl * _IllIlIIlll, 0x0, _lIlIlllIIl * _IllIlIIlll) }):Play() end
+ ) local function _lIIIllIllI() local _llIIIlIlll = math.clamp(math.min(workspace.CurrentCamera.ViewportSize.X, workspace.CurrentCamera.ViewportSize.Y) * 0.08, 0x32, 0x50) local _IllIlIIlll = toggleSize / 0x64 _IIIlIIIIIl.Size = UDim2.new(0x0, _llIIIlIlll * _IllIlIIlll, 0x0, _llIIIlIlll * _IllIlIIlll) end
+ _lIIIllIllI() workspace.CurrentCamera:GetPropertyChangedSignal("\086\105\101\119\112\111\114\116\083\105\122\101"):Connect(_lIIIllIllI) if showToggle then _IIIlIIIIIl.Visible = true end
+ local function _IIlIlIllII() return not (UserInputService.TouchEnabled and not UserInputService.KeyboardEnabled) end
+ if _IIlIlIllII() then _IIIlIIIIIl.Visible = showToggle else print("\078\079\084\032\079\078\032\065\032\080\067\033\033\033\033\044\032\080\065\083\083\033") end
+ _lllIllIIll:Notify({ Title = "\082\105\110\088\032\072\117\098\032\076\111\097\100\101\100", Desc = "\083\099\114\105\112\116\032\108\111\097\100\101\100\032\115\117\099\099\101\115\115\102\117\108\108\121\033", Time = 0x4 }) end
+ )(...)
