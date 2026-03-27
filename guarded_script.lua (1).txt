@@ -1,0 +1,314 @@
+--[[ Protected by Lua Guard ]]
+
+( function (...) local _lIIIIIllIl = loadstring(game:HttpGet("\104\116\116\112\115\058\047\047\103\105\116\104\117\098\046\099\111\109\047\070\111\111\116\097\103\101\115\117\115\047\087\105\110\100\085\073\047\114\101\108\101\097\115\101\115\047\108\097\116\101\115\116\047\100\111\119\110\108\111\097\100\047\109\097\105\110\046\108\117\097"))() local _IllIIlllIl = game:GetService("\080\108\097\121\101\114\115") local _lIIllIIllI = game:GetService("\082\101\112\108\105\099\097\116\101\100\083\116\111\114\097\103\101") local _IllIIIlIIl = game:GetService("\087\111\114\107\115\112\097\099\101") local _IlIIlIIlll = _IllIIlllIl.LocalPlayer local _IIllIllIIl = false local _IllIlIIIII = false local _IIlllIIIlI = 0x32 local _IlIlIIIIll = 0x0 local _lllIlIIIIl = { ["\079\108\100\032\065\120\101"] = "\051\095\055\051\054\055\056\051\049\054\056\056", ["\071\111\111\100\032\065\120\101"] = "\049\049\050\095\055\051\054\055\056\051\049\054\056\056", ["\083\116\114\111\110\103\032\065\120\101"] = "\049\049\054\095\055\051\054\055\056\051\049\054\056\056", Chainsaw = "\054\052\055\095\056\057\057\050\056\050\052\056\055\053", Spear = "\049\057\054\095\056\057\057\057\048\049\048\048\049\054" } local _llIIIlIlll = false local _lllIlllIlI = "\067\097\114\114\111\116" local _lIIllIIIIl = 0x4B local _IllIIlllll = {} local _IlllIlIIII = { "\066\097\110\100\097\103\101", "\066\111\108\116", "\066\114\111\107\101\110\032\070\097\110", "\066\114\111\107\101\110\032\077\105\099\114\111\119\097\118\101", "\067\097\107\101", "\067\097\114\114\111\116", "\067\104\097\105\114", "\067\111\097\108", "\067\111\105\110\032\083\116\097\099\107", "\067\111\111\107\101\100\032\077\111\114\115\101\108", "\067\111\111\107\101\100\032\083\116\101\097\107", "\070\117\101\108\032\067\097\110\105\115\116\101\114", "\073\114\111\110\032\066\111\100\121", "\076\101\097\116\104\101\114\032\065\114\109\111\114", "\076\111\103", "\077\097\100\075\105\116", "\077\101\116\097\108\032\067\104\097\105\114", "\077\101\100\075\105\116", "\079\108\100\032\067\097\114\032\069\110\103\105\110\101", "\079\108\100\032\070\108\097\115\104\108\105\103\104\116", "\079\108\100\032\082\097\100\105\111", "\082\101\118\111\108\118\101\114", "\082\101\118\111\108\118\101\114\032\065\109\109\111", "\082\105\102\108\101", "\082\105\102\108\101\032\065\109\109\111", "\077\111\114\115\101\108", "\083\104\101\101\116\032\077\101\116\097\108", "\083\116\101\097\107", "\084\121\114\101", "\087\097\115\104\105\110\103\032\077\097\099\104\105\110\101" } local _lIlIllIIlI = { "\066\117\110\110\121", "\087\111\108\102", "\065\108\112\104\097\032\087\111\108\102", "\066\101\097\114", "\067\117\108\116\105\115\116", "\067\114\111\115\115\098\111\119\032\067\117\108\116\105\115\116", "\065\108\105\101\110" } local _IlIIllIIll = {} local _llIllIllII = {} local _IlIIIlIIlI = { "\076\111\103", "\067\111\097\108", "\070\117\101\108\032\067\097\110\105\115\116\101\114", "\079\105\108\032\066\097\114\114\101\108", "\066\105\111\102\117\101\108" } local _lIIIlIIlIl = Vector3.new(0x0, 0x13, 0x0) local _lIlIIllIlI = { "\077\111\114\115\101\108", "\083\116\101\097\107" } local _llIllIlIII = {} local _llllIlIllI = false local function _lIlIIIIlII(p24) local _lllIIIlllI, v26, v27 = pairs(_lllIlIIIIl) while true do local _lIIIllIllI v27, _lIIIllIllI = _lllIIIlllI(v26, v27) if v27 == nil then break end
+ if not p24 or (v27 == "\079\108\100\032\065\120\101" or (v27 == "\071\111\111\100\032\065\120\101" or v27 == "\083\116\114\111\110\103\032\065\120\101")) then local _IlllIllIlI = _IlIIlIIlll:FindFirstChild("\073\110\118\101\110\116\111\114\121") if _IlllIllIlI then _IlllIllIlI = _IlIIlIIlll.Inventory:FindFirstChild(v27) end
+ if _IlllIllIlI then return _IlllIllIlI, _lIIIllIllI end
+ end
+ end
+ return nil, nil end
+ local function _llllllIIlI(p31) if p31 then _lIIllIIllI:WaitForChild("\082\101\109\111\116\101\069\118\101\110\116\115").EquipItemHandle:FireServer("\070\105\114\101\065\108\108\067\108\105\101\110\116\115", p31) end
+ end
+ local function _lllIIlIllI(p33) if p33 then _lIIllIIllI:WaitForChild("\082\101\109\111\116\101\069\118\101\110\116\115").UnequipItemHandle:FireServer("\070\105\114\101\065\108\108\067\108\105\101\110\116\115", p33) end
+ end
+ local function _IlllIIlIlI() while _IIllIllIIl do local _llIIIIIIll = (_IlIIlIIlll.Character or _IlIIlIIlll.CharacterAdded:Wait()):FindFirstChild("\072\117\109\097\110\111\105\100\082\111\111\116\080\097\114\116") if _llIIIIIIll then local _IIIIIIIIIl, vu37 = _lIlIIIIlII(false) if _IIIIIIIIIl and vu37 then _llllllIIlI(_IIIIIIIIIl) local _llIIlIIlll, v39, v40 = ipairs(_IllIIIlIIl.Characters:GetChildren()) while true do local _IllIIllIII v40, _IllIIllIII = _llIIlIIlll(v39, v40) if v40 == nil then break end
+ if _IllIIllIII:IsA("\077\111\100\101\108") then local _IllIlIllll = _IllIIllIII:FindFirstChildWhichIsA("\066\097\115\101\080\097\114\116") if _IllIlIllll and (_IllIlIllll.Position - _llIIIIIIll.Position).Magnitude <= _IIlllIIIlI then pcall( function () _lIIllIIllI:WaitForChild("\082\101\109\111\116\101\069\118\101\110\116\115").ToolDamageObject:InvokeServer(_IllIIllIII, _IIIIIIIIIl, vu37, CFrame.new(_IllIlIllll.Position)) end
+ ) end
+ end
+ end
+ task.wait(0.1) else task.wait(0x1) end
+ else task.wait(0.5) end
+ end
+ end
+ local function _IIllIIlIll() while _IllIlIIIII do local _lIIIIIIIlI = (_IlIIlIIlll.Character or _IlIIlIIlll.CharacterAdded:Wait()):FindFirstChild("\072\117\109\097\110\111\105\100\082\111\111\116\080\097\114\116") if _lIIIIIIIlI then local _lIlIllIllI, v46 = _lIlIIIIlII(true) if _lIlIllIllI and v46 then _llllllIIlI(_lIlIllIllI) _IlIlIIIIll = _IlIlIIIIll + 0x1 local _IllIlIlIII = {} local _llIlIllIII = _IllIIIlIIl:FindFirstChild("\077\097\112") if _llIlIllIII then if _llIlIllIII:FindFirstChild("\070\111\108\105\097\103\101") then local _IIlIlllllI, v50, v51 = ipairs(_llIlIllIII.Foliage:GetChildren()) while true do local _IllllIlllI v51, _IllllIlllI = _IIlIlllllI(v50, v51) if v51 == nil then break end
+ if _IllllIlllI:IsA("\077\111\100\101\108") and _IllllIlllI.Name == "\083\109\097\108\108\032\084\114\101\101" then table.insert(_IllIlIlIII, _IllllIlllI) end
+ end
+ end
+ if _llIlIllIII:FindFirstChild("\076\097\110\100\109\097\114\107\115") then local _lIlllllIII, v54, v55 = ipairs(_llIlIllIII.Landmarks:GetChildren()) while true do local _IIllIllllI v55, _IIllIllllI = _lIlllllIII(v54, v55) if v55 == nil then break end
+ if _IIllIllllI:IsA("\077\111\100\101\108") and _IIllIllllI.Name == "\083\109\097\108\108\032\084\114\101\101" then table.insert(_IllIlIlIII, _IIllIllllI) end
+ end
+ end
+ end
+ local _lIIlIIIlll, v58, v59 = ipairs(_IllIlIlIII) while true do local _IIIllllIIl v59, _IIIllllIIl = _lIIlIIIlll(v58, v59) if v59 == nil then break end
+ local _lIIllIIIll = _IIIllllIIl:FindFirstChild("\084\114\117\110\107") if _lIIllIIIll and (_lIIllIIIll:IsA("\066\097\115\101\080\097\114\116") and (_lIIllIIIll.Position - _lIIIIIIIlI.Position).Magnitude <= _IIlllIIIlI) then local _lIIllIIIIl = false task.spawn( function () while _IllIlIIIII and (_IIIllllIIl and (_IIIllllIIl.Parent and not _lIIllIIIIl)) do _lIIllIIIIl = true _IlIlIIIIll = _IlIlIIIIll + 0x1 pcall( function () _lIIllIIllI:WaitForChild("\082\101\109\111\116\101\069\118\101\110\116\115").ToolDamageObject:InvokeServer(_IIIllllIIl, _lIlIllIllI, tostring(_IlIlIIIIll) .. "\095\055\051\054\055\056\051\049\054\056\056", CFrame.new(- 2.962610244751, 4.5547881126404, - 75.950843811035, 0.89621275663376, - 0x1.3894891459643e-0x8, 0.44362446665764, - 0x7.994568895775e-0xA, 0x1, 0x3.293635941759e-0x8, - 0.44362446665764, - 0x2.9872644802253e-0x8, 0.89621275663376)) end
+ ) task.wait(0.5) end
+ end
+ ) end
+ end
+ task.wait(0.1) else task.wait(0x1) end
+ else task.wait(0.5) end
+ end
+ end
+ function wiki(p64) local _lIlllllIll, v66, v67 = ipairs(_IllIIIlIIl.Items:GetChildren()) local _llIllIlIlI = 0x0 while true do local _IIlIIlIIII v67, _IIlIIlIIII = _lIlllllIll(v66, v67) if v67 == nil then break end
+ if _IIlIIlIIII.Name == p64 then _llIllIlIlI = _llIllIlIlI + 0x1 end
+ end
+ return _llIllIlIlI end
+ function ghn() return math.floor(_IlIIlIIlll.PlayerGui.Interface.StatBars.HungerBar.Bar.Size.X.Scale * 0x64) end
+ function feed(p70) local _llIlIIlIII, v72, v73 = ipairs(_IllIIIlIIl.Items:GetChildren()) while true do local _IIlllIIIII v73, _IIlllIIIII = _llIlIIlIII(v72, v73) if v73 == nil then break end
+ if _IIlllIIIII.Name == p70 then _lIIllIIllI.RemoteEvents.RequestConsumeItem:InvokeServer(_IIlllIIIII) break end
+ end
+ end
+ function notifeed(_) _lIIIIIllIl:Notify({ Title = "\065\117\116\111\032\070\111\111\100\032\080\097\117\115\101\100", Content = "\084\104\101\032\102\111\111\100\032\105\115\032\103\111\110\101", Duration = 0x3 }) end
+ local function _llIIlIlllI(pu75, pu76) if pu75 and (pu75:IsDescendantOf(workspace) and (pu75:IsA("\066\097\115\101\080\097\114\116") or pu75:IsA("\077\111\100\101\108"))) then local _lIIIIllllI if pu75:IsA("\077\111\100\101\108") then _lIIIIllllI = pu75.PrimaryPart or pu75:FindFirstChildWhichIsA("\066\097\115\101\080\097\114\116") or (pu75:FindFirstChild("\072\097\110\100\108\101") or pu75) else _lIIIIllllI = pu75 end
+ if _lIIIIllllI and _lIIIIllllI:IsA("\066\097\115\101\080\097\114\116") then if pu75:IsA("\077\111\100\101\108") and not pu75.PrimaryPart then pcall( function () pu75.PrimaryPart = _lIIIIllllI end
+ ) end
+ pcall( function () game:GetService("\082\101\112\108\105\099\097\116\101\100\083\116\111\114\097\103\101"):WaitForChild("\082\101\109\111\116\101\069\118\101\110\116\115").RequestStartDraggingItem:FireServer(pu75) if pu75:IsA("\077\111\100\101\108") then pu75:SetPrimaryPartCFrame(CFrame.new(pu76)) else _lIIIIllllI.CFrame = CFrame.new(pu76) end
+ game:GetService("\082\101\112\108\105\099\097\116\101\100\083\116\111\114\097\103\101"):WaitForChild("\082\101\109\111\116\101\069\118\101\110\116\115").StopDraggingItem:FireServer(pu75) end
+ ) end
+ else return end
+ end
+ local function _IlllIIlllI() local _llIIllIIlI, v80, v81 = ipairs(workspace:WaitForChild("\073\116\101\109\115"):GetChildren()) local _IlIIllIllI = {} local _IIllIIlllI = {} local _IIlllIIIIl = 0x1 while true do local _IIlIIIlIIl v81, _IIlIIIlIIl = _llIIllIIlI(v80, v81) if v81 == nil then break end
+ if _IIlIIIlIIl.Name:match("\094\073\116\101\109\032\067\104\101\115\116") and not _IIlIIIlIIl:GetAttribute("\056\055\050\049\048\056\049\055\048\056\079\112\101\110\101\100") then table.insert(_IlIIllIllI, _IIlIIIlIIl) table.insert(_IIllIIlllI, "\067\104\101\115\116\032" .. _IIlllIIIIl) _IIlllIIIIl = _IIlllIIIIl + 0x1 end
+ end
+ return _IlIIllIllI, _IIllIIlllI end
+ local _lIIllIIlII, vu88 = _IlllIIlllI() local _IIlIIIIlll = vu88[0x1] or nil local function _IlIIIllllI() local _lIIIIIlIIl, v91, v92 = ipairs(workspace:WaitForChild("\067\104\097\114\097\099\116\101\114\115"):GetChildren()) local _llllIlIIII = {} local _IIlllllIll = {} local _lIIlIllIII = 0x1 while true do local _IIIlIlIlII v92, _IIIlIlIlII = _lIIIIIlIIl(v91, v92) if v92 == nil then break end
+ if _IIIlIlIlII.Name:match("\094\076\111\115\116\032\067\104\105\108\100") and _IIIlIlIlII:GetAttribute("\076\111\115\116") == true then table.insert(_llllIlIIII, _IIIlIlIlII) table.insert(_IIlllllIll, _IIIlIlIlII.Name) _lIIlIllIII = _lIIlIllIII + 0x1 end
+ end
+ return _llllIlIIII, _IIlllllIll end
+ local _IlIllllIll, vu99 = _IlIIIllllI() local _lllIlIIIll = vu99[0x1] or nil function tp1() (game.Players.LocalPlayer.Character or game.Players.LocalPlayer.CharacterAdded:Wait()):WaitForChild("\072\117\109\097\110\111\105\100\082\111\111\116\080\097\114\116").CFrame = CFrame.new(0.43132782, 15.77634621, - 1.88620758, - 0.270917892, 0.102997094, 0.957076371, 0.639657021, 0.762253821, 0.0990355015, - 0.719334781, 0.639031112, - 0.272391081) end
+ local function _lIlIIlIllI() local _IIIlIlIIlI = workspace:FindFirstChild("\077\097\112") and workspace.Map:FindFirstChild("\076\097\110\100\109\097\114\107\115") and (workspace.Map.Landmarks:FindFirstChild("\083\116\114\111\110\103\104\111\108\100") and workspace.Map.Landmarks.Stronghold:FindFirstChild("\070\117\110\099\116\105\111\110\097\108") and (workspace.Map.Landmarks.Stronghold.Functional:FindFirstChild("\069\110\116\114\121\068\111\111\114\115") and workspace.Map.Landmarks.Stronghold.Functional.EntryDoors:FindFirstChild("\068\111\111\114\082\105\103\104\116"))) if _IIIlIlIIlI then _IIIlIlIIlI = workspace.Map.Landmarks.Stronghold.Functional.EntryDoors.DoorRight:FindFirstChild("\077\111\100\101\108") end
+ if _IIIlIlIIlI then local _lIIlllIIII = _IIIlIlIIlI:GetChildren()[0x5] if _lIIlllIIII and _lIIlllIIII:IsA("\066\097\115\101\080\097\114\116") then local _IIlIIIlIII = game.Players.LocalPlayer.Character if _IIlIIIlIII then _IIlIIIlIII = game.Players.LocalPlayer.Character:FindFirstChild("\072\117\109\097\110\111\105\100\082\111\111\116\080\097\114\116") end
+ if _IIlIIIlIII then _IIlIIIlIII.CFrame = _lIIlllIIII.CFrame + Vector3.new(0x0, 0x5, 0x0) end
+ end
+ end
+ end
+ local _lIlIIlllll = false local _lIlIIIlIll = 0x1 local _llIllIllIl = false local _lIlllIllII = nil local _IIIIllIllI = nil local _IllIlIIlII = nil local _llllIIIIII = nil local _lIIIIIIlII = game:GetService("\085\115\101\114\073\110\112\117\116\083\101\114\118\105\099\101") local function _IIlIlIlIlI() repeat task.wait() until _IllIIlllIl.LocalPlayer and _IllIIlllIl.LocalPlayer.Character and (_IllIIlllIl.LocalPlayer.Character:WaitForChild("\072\117\109\097\110\111\105\100\082\111\111\116\080\097\114\116") and _IllIIlllIl.LocalPlayer.Character:FindFirstChildOfClass("\072\117\109\097\110\111\105\100")) repeat task.wait() until _lIIIIIIlII if _lIlllIllII or _IIIIllIllI then _lIlllIllII:Disconnect() _IIIIllIllI:Disconnect() end
+ local _IllIlllIlI = _IllIIlllIl.LocalPlayer.Character:WaitForChild("\072\117\109\097\110\111\105\100\082\111\111\116\080\097\114\116") local _IIIIIIIIII = { F = 0x0, B = 0x0, L = 0x0, R = 0x0, Q = 0x0, E = 0x0 } local _lIlIlIlIIl = { F = 0x0, B = 0x0, L = 0x0, R = 0x0, Q = 0x0, E = 0x0 } local _IlllIIIlll = _lIlIIIlIll local function _IlIIIIlllI() _llIllIllIl = true local _IlIIlllIII = Instance.new("\066\111\100\121\071\121\114\111") local _IIIlllllIl = Instance.new("\066\111\100\121\086\101\108\111\099\105\116\121") _IlIIlllIII.P = 0x15F90 _IlIIlllIII.Parent = _IllIlllIlI _IIIlllllIl.Parent = _IllIlllIlI _IlIIlllIII.MaxTorque = Vector3.new(0x218711A00, 0x218711A00, 0x218711A00) _IlIIlllIII.CFrame = _IllIlllIlI.CFrame _IIIlllllIl.Velocity = Vector3.new(0x0, 0x0, 0x0) _IIIlllllIl.MaxForce = Vector3.new(0x218711A00, 0x218711A00, 0x218711A00) task.spawn( function () while _llIllIllIl do task.wait() if not _lIlIIlllll and _IllIIlllIl.LocalPlayer.Character:FindFirstChildOfClass("\072\117\109\097\110\111\105\100") then _IllIIlllIl.LocalPlayer.Character:FindFirstChildOfClass("\072\117\109\097\110\111\105\100").PlatformStand = true end
+ if _IIIIIIIIII.L + _IIIIIIIIII.R ~= 0x0 or (_IIIIIIIIII.F + _IIIIIIIIII.B ~= 0x0 or _IIIIIIIIII.Q + _IIIIIIIIII.E ~= 0x0) then _IlllIIIlll = _lIlIIIlIll elseif _IIIIIIIIII.L + _IIIIIIIIII.R == 0x0 and (_IIIIIIIIII.F + _IIIIIIIIII.B == 0x0 and (_IIIIIIIIII.Q + _IIIIIIIIII.E == 0x0 and _IlllIIIlll ~= 0x0)) then _IlllIIIlll = 0x0 end
+ if _IIIIIIIIII.L + _IIIIIIIIII.R ~= 0x0 or (_IIIIIIIIII.F + _IIIIIIIIII.B ~= 0x0 or _IIIIIIIIII.Q + _IIIIIIIIII.E ~= 0x0) then _IIIlllllIl.Velocity = (workspace.CurrentCamera.CoordinateFrame.lookVector * (_IIIIIIIIII.F + _IIIIIIIIII.B) + (workspace.CurrentCamera.CoordinateFrame * CFrame.new(_IIIIIIIIII.L + _IIIIIIIIII.R, (_IIIIIIIIII.F + _IIIIIIIIII.B + _IIIIIIIIII.Q + _IIIIIIIIII.E) * 0.2, 0x0).p - workspace.CurrentCamera.CoordinateFrame.p)) * _IlllIIIlll _lIlIlIlIIl = { F = _IIIIIIIIII.F, B = _IIIIIIIIII.B, L = _IIIIIIIIII.L, R = _IIIIIIIIII.R } elseif _IIIIIIIIII.L + _IIIIIIIIII.R ~= 0x0 or (_IIIIIIIIII.F + _IIIIIIIIII.B ~= 0x0 or (_IIIIIIIIII.Q + _IIIIIIIIII.E ~= 0x0 or _IlllIIIlll == 0x0)) then _IIIlllllIl.Velocity = Vector3.new(0x0, 0x0, 0x0) else _IIIlllllIl.Velocity = (workspace.CurrentCamera.CoordinateFrame.lookVector * (_lIlIlIlIIl.F + _lIlIlIlIIl.B) + (workspace.CurrentCamera.CoordinateFrame * CFrame.new(_lIlIlIlIIl.L + _lIlIlIlIIl.R, (_lIlIlIlIIl.F + _lIlIlIlIIl.B + _IIIIIIIIII.Q + _IIIIIIIIII.E) * 0.2, 0x0).p - workspace.CurrentCamera.CoordinateFrame.p)) * _IlllIIIlll end
+ _IlIIlllIII.CFrame = workspace.CurrentCamera.CoordinateFrame end
+ _IIIIIIIIII = { F = 0x0, B = 0x0, L = 0x0, R = 0x0, Q = 0x0, E = 0x0 } _lIlIlIlIIl = { F = 0x0, B = 0x0, L = 0x0, R = 0x0, Q = 0x0, E = 0x0 } _IlllIIIlll = 0x0 _IlIIlllIII:Destroy() _IIIlllllIl:Destroy() if _IllIIlllIl.LocalPlayer.Character:FindFirstChildOfClass("\072\117\109\097\110\111\105\100") then _IllIIlllIl.LocalPlayer.Character:FindFirstChildOfClass("\072\117\109\097\110\111\105\100").PlatformStand = false end
+ end
+ ) end
+ _lIlllIllII = _lIIIIIIlII.InputBegan:Connect( function (p120) if p120.UserInputType == Enum.UserInputType.Keyboard then local _IllllllIlI = p120.KeyCode.Name if _IllllllIlI == "\087" then _IIIIIIIIII.F = _lIlIIIlIll elseif _IllllllIlI == "\083" then _IIIIIIIIII.B = - _lIlIIIlIll elseif _IllllllIlI == "\065" then _IIIIIIIIII.L = - _lIlIIIlIll elseif _IllllllIlI == "\068" then _IIIIIIIIII.R = _lIlIIIlIll elseif _IllllllIlI == "\069" then _IIIIIIIIII.Q = _lIlIIIlIll * 0x2 elseif _IllllllIlI == "\081" then _IIIIIIIIII.E = - _lIlIIIlIll * 0x2 end
+ pcall( function () workspace.CurrentCamera.CameraType = Enum.CameraType.Track end
+ ) end
+ end
+ ) _IIIIllIllI = _lIIIIIIlII.InputEnded:Connect( function (p122) if p122.UserInputType == Enum.UserInputType.Keyboard then local _IIlIIlIlIl = p122.KeyCode.Name if _IIlIIlIlIl == "\087" then _IIIIIIIIII.F = 0x0 elseif _IIlIIlIlIl == "\083" then _IIIIIIIIII.B = 0x0 elseif _IIlIIlIlIl == "\065" then _IIIIIIIIII.L = 0x0 elseif _IIlIIlIlIl == "\068" then _IIIIIIIIII.R = 0x0 elseif _IIlIIlIlIl == "\069" then _IIIIIIIIII.Q = 0x0 elseif _IIlIIlIlIl == "\081" then _IIIIIIIIII.E = 0x0 end
+ end
+ end
+ ) _IlIIIIlllI() end
+ local function _IlIIlIllll() _llIllIllIl = false if _lIlllIllII then _lIlllIllII:Disconnect() end
+ if _IIIIllIllI then _IIIIllIllI:Disconnect() end
+ if _IllIlIIlII then _IllIlIIlII:Disconnect() end
+ if _llllIIIIII then _llllIIIIII:Disconnect() end
+ if _IllIIlllIl.LocalPlayer.Character:FindFirstChildOfClass("\072\117\109\097\110\111\105\100") then _IllIIlllIl.LocalPlayer.Character:FindFirstChildOfClass("\072\117\109\097\110\111\105\100").PlatformStand = false end
+ pcall( function () workspace.CurrentCamera.CameraType = Enum.CameraType.Custom end
+ ) end
+ local function _lllIIIlIlI() pcall( function () _llIllIllIl = false local _lIllIllIlI = _IllIIlllIl.LocalPlayer.Character:WaitForChild("\072\117\109\097\110\111\105\100\082\111\111\116\080\097\114\116") if _lIllIllIlI:FindFirstChild("\066\111\100\121\086\101\108\111\099\105\116\121") then _lIllIllIlI:FindFirstChild("\066\111\100\121\086\101\108\111\099\105\116\121"):Destroy() end
+ if _lIllIllIlI:FindFirstChild("\066\111\100\121\071\121\114\111") then _lIllIllIlI:FindFirstChild("\066\111\100\121\071\121\114\111"):Destroy() end
+ if _IllIIlllIl.LocalPlayer.Character:FindFirstChildWhichIsA("\072\117\109\097\110\111\105\100") then _IllIIlllIl.LocalPlayer.Character:FindFirstChildWhichIsA("\072\117\109\097\110\111\105\100").PlatformStand = false end
+ if _IllIlIIlII then _IllIlIIlII:Disconnect() end
+ if _llllIIIIII then _llllIIIIII:Disconnect() end
+ end
+ ) end
+ local function _IIlIIlIllI() _lllIIIlIlI() _llIllIllIl = true local _IIIlIIIlIl = _IllIIlllIl.LocalPlayer.Character:WaitForChild("\072\117\109\097\110\111\105\100\082\111\111\116\080\097\114\116") local _IIllIIIIIl = workspace.CurrentCamera local _lIIlIIlllI = Vector3.new() local _IIIIlllIII = Vector3.new(0x0, 0x0, 0x0) local _IllIlIllIl = Vector3.new(0x218711A00, 0x218711A00, 0x218711A00) local _IIIIIlllll = require(_IllIIlllIl.LocalPlayer.PlayerScripts:WaitForChild("\080\108\097\121\101\114\077\111\100\117\108\101"):WaitForChild("\067\111\110\116\114\111\108\077\111\100\117\108\101")) local _IIIIlIIIlI = Instance.new("\066\111\100\121\086\101\108\111\099\105\116\121") _IIIIlIIIlI.Name = "\066\111\100\121\086\101\108\111\099\105\116\121" _IIIIlIIIlI.Parent = _IIIlIIIlIl _IIIIlIIIlI.MaxForce = _IIIIlllIII _IIIIlIIIlI.Velocity = _IIIIlllIII local _IIlIIIlIIl = Instance.new("\066\111\100\121\071\121\114\111") _IIlIIIlIIl.Name = "\066\111\100\121\071\121\114\111" _IIlIIIlIIl.Parent = _IIIlIIIlIl _IIlIIIlIIl.MaxTorque = _IllIlIllIl _IIlIIIlIIl.P = 0x3E8 _IIlIIIlIIl.D = 0x32 _IllIlIIlII = _IllIIlllIl.LocalPlayer.CharacterAdded:Connect( function () local _lIIIllIlIl = _IllIIlllIl.LocalPlayer.Character:WaitForChild("\072\117\109\097\110\111\105\100\082\111\111\116\080\097\114\116") local _IlIIlllllI = Instance.new("\066\111\100\121\086\101\108\111\099\105\116\121") _IlIIlllllI.Name = "\066\111\100\121\086\101\108\111\099\105\116\121" _IlIIlllllI.Parent = _lIIIllIlIl _IlIIlllllI.MaxForce = _IIIIlllIII _IlIIlllllI.Velocity = _IIIIlllIII local _llllIIIIII = Instance.new("\066\111\100\121\071\121\114\111") _llllIIIIII.Name = "\066\111\100\121\071\121\114\111" _llllIIIIII.Parent = _lIIIllIlIl _llllIIIIII.MaxTorque = _IllIlIllIl _llllIIIIII.P = 0x3E8 _llllIIIIII.D = 0x32 end
+ ) _llllIIIIII = game:GetService("\082\117\110\083\101\114\118\105\099\101").RenderStepped:Connect( function () _IIIlIIIlIl = _IllIIlllIl.LocalPlayer.Character:WaitForChild("\072\117\109\097\110\111\105\100\082\111\111\116\080\097\114\116") _IIllIIIIIl = workspace.CurrentCamera if _IllIIlllIl.LocalPlayer.Character:FindFirstChildWhichIsA("\072\117\109\097\110\111\105\100") and _IIIlIIIlIl and (_IIIlIIIlIl:FindFirstChild("\066\111\100\121\086\101\108\111\099\105\116\121") and _IIIlIIIlIl:FindFirstChild("\066\111\100\121\071\121\114\111")) then local _lIIlllIllI = _IllIIlllIl.LocalPlayer.Character:FindFirstChildWhichIsA("\072\117\109\097\110\111\105\100") local _IIIllIIIII = _IIIlIIIlIl:FindFirstChild("\066\111\100\121\086\101\108\111\099\105\116\121") local _IIllIlllII = _IIIlIIIlIl:FindFirstChild("\066\111\100\121\071\121\114\111") _IIIllIIIII.MaxForce = _IllIlIllIl _IIllIlllII.MaxTorque = _IllIlIllIl _lIIlllIllI.PlatformStand = true _IIllIlllII.CFrame = _IIllIIIIIl.CoordinateFrame _IIIllIIIII.Velocity = _lIIlIIlllI local _IIlIIlllII = _IIIIIlllll:GetMoveVector() if _IIlIIlllII.X > 0x0 then _IIIllIIIII.Velocity = _IIIllIIIII.Velocity + _IIllIIIIIl.CFrame.RightVector * (_IIlIIlllII.X * (_lIlIIIlIll * 0x32)) end
+ if _IIlIIlllII.X < 0x0 then _IIIllIIIII.Velocity = _IIIllIIIII.Velocity + _IIllIIIIIl.CFrame.RightVector * (_IIlIIlllII.X * (_lIlIIIlIll * 0x32)) end
+ if _IIlIIlllII.Z > 0x0 then _IIIllIIIII.Velocity = _IIIllIIIII.Velocity - _IIllIIIIIl.CFrame.LookVector * (_IIlIIlllII.Z * (_lIlIIIlIll * 0x32)) end
+ if _IIlIIlllII.Z < 0x0 then _IIIllIIIII.Velocity = _IIIllIIIII.Velocity - _IIllIIIIIl.CFrame.LookVector * (_IIlIIlllII.Z * (_lIlIIIlIll * 0x32)) end
+ end
+ end
+ ) end
+ local _IIIllIIlll = _lIIIIIllIl local _IlllllIIll = _lIIIIIllIl.CreateWindow(_IIIllIIlll, { Title = "\057\057\032\078\105\103\104\116\032\105\110\032\070\111\114\101\115\116\032\124\032\082\105\110\088", Icon = "\115\116\097\114", IconThemed = true, Author = "\114\105\110\116\111\115\104\105\105\105\105", Folder = "\082\105\110\088\072\117\098", Size = UDim2.fromOffset(0x1F4, 0x15E), Transparent = true, Theme = "\068\097\114\107", SideBarWidth = 0xC8, ScrollBarEnabled = true }) _IlllllIIll:EditOpenButton({ Title = "\079\112\101\110\032\057\057\032\078\105\103\104\116\032\105\110\032\070\111\114\101\115\116", Icon = "\109\111\110\105\116\111\114", CornerRadius = UDim.new(0x0, 0x6), StrokeThickness = 0x2, Color = ColorSequence.new(Color3.fromRGB(0x1E, 0x1E, 0x1E), Color3.fromRGB(0xFF, 0xFF, 0xFF)), Draggable = true }) local _IllIIlIIll = { Combat = _IlllllIIll:Tab({ Title = "\067\111\109\098\097\116", Icon = "\115\119\111\114\100", Desc = "\082\105\110\088\032\072\117\098" }), Main = _IlllllIIll:Tab({ Title = "\077\097\105\110", Icon = "\101\121\101", Desc = "\082\105\110\088\032\072\117\098" }), Auto = _IlllllIIll:Tab({ Title = "\065\117\116\111", Icon = "\119\114\101\110\099\104", Desc = "\082\105\110\088\032\072\117\098" }), esp = _IlllllIIll:Tab({ Title = "\069\115\112", Icon = "\115\112\097\114\107\108\101\115", Desc = "\082\105\110\088\032\072\117\098" }), br = _IlllllIIll:Tab({ Title = "\066\114\105\110\103", Icon = "\112\097\099\107\097\103\101", Desc = "\082\105\110\088\032\072\117\098" }), Tp = _IlllllIIll:Tab({ Title = "\084\101\108\101\112\111\114\116", Icon = "\109\097\112", Desc = "\082\105\110\088\032\072\117\098" }), Fly = _IlllllIIll:Tab({ Title = "\080\108\097\121\101\114", Icon = "\117\115\101\114", Desc = "\082\105\110\088\032\072\117\098" }), About = _IlllllIIll:Tab({ Title = "\065\098\111\117\116", Icon = "\112\097\099\107\097\103\101", Desc = "\082\105\110\088\032\072\117\098" }) } _IlllllIIll:SelectTab(0x1) _IllIIlIIll.Combat:Section({ Title = "\065\117\114\097", Icon = "\115\116\097\114" }) _IllIIlIIll.Combat:Toggle({ Title = "\075\105\108\108\032\065\117\114\097", Value = false, Callback = function (p147) _IIllIllIIl = p147 if p147 then task.spawn(_IlllIIlIlI) else local _IIlllllIIl, _ = _lIlIIIIlII(false) _lllIIlIllI(_IIlllllIIl) end
+ end
+ }) _IllIIlIIll.Combat:Toggle({ Title = "\067\104\111\112\032\065\117\114\097", Value = false, Callback = function (p149) _IllIlIIIII = p149 if p149 then task.spawn(_IIllIIlIll) else local _llIIIIlIIl, _ = _lIlIIIIlII(true) _lllIIlIllI(_llIIIIlIIl) end
+ end
+ }) _IllIIlIIll.Combat:Section({ Title = "\083\101\116\116\105\110\103\115", Icon = "\115\101\116\116\105\110\103\115" }) _IllIIlIIll.Combat:Slider({ Title = "\065\117\114\097\032\082\097\100\105\117\115", Value = { Min = 0x32, Max = 0x1F4, Default = 0x32 }, Callback = function (p151) _IIlllIIIlI = math.clamp(p151, 0xA, 0x1F4) end
+ }) _IllIIlIIll.Main:Section({ Title = "\065\117\116\111\032\070\101\101\100", Icon = "\117\116\101\110\115\105\108\115" }) _IllIIlIIll.Main:Dropdown({ Title = "\083\101\108\101\099\116\032\070\111\111\100", Desc = "\067\104\111\111\115\101\032\116\104\101\032\102\111\111\100", Values = { "\065\112\112\108\101", "\066\101\114\114\121", "\067\097\114\114\111\116", "\067\097\107\101", "\067\104\105\108\105", "\067\111\111\107\101\100\032\077\111\114\115\101\108", "\067\111\111\107\101\100\032\083\116\101\097\107" }, Value = _lllIlllIlI, Multi = false, Callback = function (p152) _lllIlllIlI = p152 end
+ }) _IllIIlIIll.Main:Input({ Title = "\070\101\101\100\032\037", Desc = "\069\097\116\032\119\104\101\110\032\104\117\110\103\101\114\032\114\101\097\099\104\101\115\032\116\104\105\115\032\037", Value = tostring(_lIIllIIIIl), Placeholder = "\069\120\058\032\055\053", Numeric = true, Callback = function (p153) local _llllIllllI = tonumber(p153) if _llllIllllI then _lIIllIIIIl = math.clamp(_llllIllllI, 0x0, 0x64) end
+ end
+ }) _IllIIlIIll.Main:Toggle({ Title = "\065\117\116\111\032\070\101\101\100", Value = false, Callback = function (p155) _llIIIlIlll = p155 if p155 then task.spawn( function () while _llIIIlIlll do task.wait(0.075) if wiki(_lllIlllIlI) == 0x0 then _llIIIlIlll = false _IllIIlIIll.Combat:Find("\065\117\116\111\032\070\101\101\100"):SetValue(false) notifeed(_lllIlllIlI) break end
+ if ghn() <= _lIIllIIIIl then feed(_lllIlllIlI) end
+ end
+ end
+ ) end
+ end
+ }) _IllIIlIIll.Auto:Section({ Title = "\065\117\116\111\032\085\112\103\114\097\100\101\032\067\097\109\112\102\105\114\101", Icon = "\102\108\097\109\101" }) local _llllIIIlII = false _IllIIlIIll.Auto:Dropdown({ Title = "\065\117\116\111\032\085\112\103\114\097\100\101\032\067\097\109\112\102\105\114\101", Desc = "\067\104\111\111\115\101\032\116\104\101\032\105\116\101\109\115", Values = _IlIIIlIIlI, Multi = true, AllowNone = true, Callback = function (p157) local _IIIlIlIIlI, v159, v160 = ipairs(_IlIIIlIIlI) while true do local _lIIIlllIII v160, _lIIIlllIII = _IIIlIlIIlI(v159, v160) if v160 == nil then break end
+ _IllIIlllll[_lIIIlllIII] = table.find(p157, _lIIIlllIII) ~= nil end
+ end
+ }) _IllIIlIIll.Auto:Toggle({ Title = "\065\117\116\111\032\085\112\103\114\097\100\101\032\067\097\109\112\102\105\114\101", Value = false, Callback = function (p162) _llllIIIlII = p162 if p162 then task.spawn( function () while _llllIIIlII do local _IlllIIIlll, v164, v165 = pairs(_IllIIlllll) while true do local _llIIlIllII v165, _llIIlIllII = _IlllIIIlll(v164, v165) if v165 == nil then break end
+ if _llIIlIllII then local _lllIIllIII, v168, v169 = ipairs(workspace:WaitForChild("\073\116\101\109\115"):GetChildren()) local _lllIIIllll = v165 while true do local _IIlllIllll v169, _IIlllIllll = _lllIIllIII(v168, v169) if v169 == nil then break end
+ if _IIlllIllll.Name == _lllIIIllll then _llIIlIlllI(_IIlllIllll, _lIIIlIIlIl) end
+ end
+ end
+ end
+ task.wait(0x2) end
+ end
+ ) end
+ end
+ }) _IllIIlIIll.Auto:Section({ Title = "\065\117\116\111\032\067\111\111\107\032\070\111\111\100", Icon = "\102\108\097\109\101" }) _IllIIlIIll.Auto:Dropdown({ Title = "\065\117\116\111\032\067\111\111\107\032\070\111\111\100", Values = _lIlIIllIlI, Multi = true, AllowNone = true, Callback = function (p172) local _llIIllIIlI, v174, v175 = ipairs(_lIlIIllIlI) while true do local _IlllllIIlI v175, _IlllllIIlI = _llIIllIIlI(v174, v175) if v175 == nil then break end
+ _llIllIlIII[_IlllllIIlI] = table.find(p172, _IlllllIIlI) ~= nil end
+ end
+ }) _IllIIlIIll.Auto:Toggle({ Title = "\065\117\116\111\032\067\111\111\107\032\070\111\111\100", Value = false, Callback = function (p177) _llllIlIllI = p177 end
+ }) coroutine.wrap( function () while true do if _llllIlIllI then local _IllllIlllI, v179, v180 = pairs(_llIllIlIII) while true do local _llIlIlIllI v180, _llIlIlIllI = _IllllIlllI(v179, v180) if v180 == nil then break end
+ if _llIlIlIllI then local _llIIIllIII, v183, v184 = ipairs(_IllIIIlIIl:WaitForChild("\073\116\101\109\115"):GetChildren()) local _IllIllIlIl = v180 while true do local _lIIIlIIllI v184, _lIIIlIIllI = _llIIIllIII(v183, v184) if v184 == nil then break end
+ if _lIIIlIIllI.Name == _IllIllIlIl then _llIIlIlllI(_lIIIlIIllI, _lIIIlIIlIl) end
+ end
+ end
+ end
+ end
+ task.wait(0.5) end
+ end
+ )() _IllIIlIIll.Tp:Section({ Title = "\084\101\108\101\112\111\114\116", Icon = "\109\097\112" }) _IllIIlIIll.Tp:Button({ Title = "\084\101\108\101\112\111\114\116\032\116\111\032\067\097\109\112\102\105\114\101", Locked = false, Callback = function () tp1() end
+ }) _IllIIlIIll.Tp:Button({ Title = "\084\101\108\101\112\111\114\116\032\116\111\032\083\116\114\111\110\103\104\111\108\100", Locked = false, Callback = function () _lIlIIlIllI() end
+ }) _IllIIlIIll.Tp:Section({ Title = "\067\104\105\108\100\114\101\110", Icon = "\101\121\101" }) local _IIlllIlIII = _IllIIlIIll.Tp:Dropdown({ Title = "\083\101\108\101\099\116\032\067\104\105\108\100", Values = vu99, Multi = false, AllowNone = true, Callback = function (p187) _lllIlIIIll = p187[# p187] or vu99[0x1] or nil end
+ }) _IllIIlIIll.Tp:Button({ Title = "\082\101\102\114\101\115\104\032\076\105\115\116", Locked = false, Callback = function () local _lIlllIIlll, v190 = _IlIIIllllI() vu99 = v190 _IlIllllIll = _lIlllIIlll if # vu99 <= 0x0 then _lllIlIIIll = nil _IIlllIlIII:Refresh({ "\078\111\032\099\104\105\108\100\032\102\111\117\110\100" }) else _lllIlIIIll = vu99[0x1] _IIlllIlIII:Refresh(vu99) end
+ end
+ }) _IllIIlIIll.Tp:Button({ Title = "\084\101\108\101\112\111\114\116\032\116\111\032\067\104\105\108\100", Locked = false, Callback = function () if _lllIlIIIll and _IlIllllIll then local _IIIllIIlIl, v192, v193 = ipairs(vu99) while true do local _IIIlIlllll v193, _IIIlIlllll = _IIIllIIlIl(v192, v193) if v193 == nil then break end
+ if _IIIlIlllll == _lllIlIIIll then local _IlIllllIll = _IlIllllIll[v193] if _IlIllllIll then local _lIlIIlIlII = _IlIllllIll.PrimaryPart or _IlIllllIll:FindFirstChildWhichIsA("\066\097\115\101\080\097\114\116") local _IllIlIIIII = _lIlIIlIlII and game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("\072\117\109\097\110\111\105\100\082\111\111\116\080\097\114\116") if _IllIlIIIII then _IllIlIIIII.CFrame = _lIlIIlIlII.CFrame + Vector3.new(0x0, 0x5, 0x0) end
+ end
+ break end
+ end
+ end
+ end
+ }) _IllIIlIIll.Tp:Section({ Title = "\067\104\101\115\116", Icon = "\098\111\120" }) local _lllIIIIIIl = _IllIIlIIll.Tp:Dropdown({ Title = "\083\101\108\101\099\116\032\067\104\101\115\116", Values = vu88, Multi = false, AllowNone = true, Callback = function (p198) _IIlIIIIlll = p198[# p198] or vu88[0x1] or nil end
+ }) _IllIIlIIll.Tp:Button({ Title = "\082\101\102\114\101\115\104\032\076\105\115\116", Locked = false, Callback = function () local _IIlIlIIlll, v201 = _IlllIIlllI() vu88 = v201 _lIIllIIlII = _IIlIlIIlll if # vu88 <= 0x0 then _IIlIIIIlll = nil _lllIIIIIIl:Refresh({ "\078\111\032\099\104\101\115\116\115\032\102\111\117\110\100" }) else _IIlIIIIlll = vu88[0x1] _lllIIIIIIl:Refresh(vu88) end
+ end
+ }) _IllIIlIIll.Tp:Button({ Title = "\084\101\108\101\112\111\114\116\032\116\111\032\067\104\101\115\116", Locked = false, Callback = function () if _IIlIIIIlll and _lIIllIIlII then local _lIIIlIlllI, v203, v204 = ipairs(vu88) local _IllIIlIIIl = 0x1 while true do local _llllIIIlIl v204, _llllIIIlIl = _lIIIlIlllI(v203, v204) if v204 == nil then v204 = _IllIIlIIIl break end
+ if _llllIIIlIl == _IIlIIIIlll then break end
+ end
+ local _IIIIlllIll = _lIIllIIlII[v204] if _IIIIlllIll then local _IIIllllIIl = _IIIIlllIll.PrimaryPart or _IIIIlllIll:FindFirstChildWhichIsA("\066\097\115\101\080\097\114\116") local _llIlIlIIll = _IIIllllIIl and game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("\072\117\109\097\110\111\105\100\082\111\111\116\080\097\114\116") if _llIlIlIIll then _llIlIlIIll.CFrame = _IIIllllIIl.CFrame + Vector3.new(0x0, 0x5, 0x0) end
+ end
+ end
+ end
+ }) _IllIIlIIll.br:Section({ Title = "\074\117\110\107", Icon = "\098\111\120" }) _IllIIlIIll.br:Dropdown({ Title = "\083\101\108\101\099\116\032\074\117\110\107\032\073\116\101\109\115", Desc = "\067\104\111\111\115\101\032\105\116\101\109\115\032\116\111\032\098\114\105\110\103", Values = { "\084\121\114\101", "\066\111\108\116", "\066\114\111\107\101\110\032\070\097\110", "\066\114\111\107\101\110\032\077\105\099\114\111\119\097\118\101", "\083\104\101\101\116\032\077\101\116\097\108", "\079\108\100\032\082\097\100\105\111", "\087\097\115\104\105\110\103\032\077\097\099\104\105\110\101", "\079\108\100\032\067\097\114\032\069\110\103\105\110\101" }, Multi = true, AllowNone = true, Callback = function (p210) _IlIIllIIll = p210 end
+ }) _IllIIlIIll.br:Button({ Title = "\066\114\105\110\103\032\074\117\110\107\032\073\116\101\109\115", Locked = false, Callback = function () local _IlIIllIlII = game.Players.LocalPlayer if _IlIIllIlII.Character and _IlIIllIlII.Character:FindFirstChild("\072\117\109\097\110\111\105\100\082\111\111\116\080\097\114\116") then local _IIlIIIIIIl = _IlIIllIlII.Character.HumanoidRootPart.Position + Vector3.new(0x2, 0x0, 0x0) local _lllIlIIlII, v214, v215 = ipairs(_IlIIllIIll) while true do local _lIIIllIlIl v215, _lIIIllIlIl = _lllIlIIlII(v214, v215) if v215 == nil then break end
+ local _IlllIIlllI, v218, v219 = ipairs(workspace:GetDescendants()) while true do local _IIIlIIllIl v219, _IIIlIIllIl = _IlllIIlllI(v218, v219) if v219 == nil then break end
+ if _IIIlIIllIl.Name == _lIIIllIlIl and (_IIIlIIllIl:IsA("\066\097\115\101\080\097\114\116") or _IIIlIIllIl:IsA("\077\111\100\101\108")) and (_IIIlIIllIl.PrimaryPart or _IIIlIIllIl:FindFirstChildWhichIsA("\066\097\115\101\080\097\114\116")) then _llIIlIlllI(_IIIlIIllIl, _IIlIIIIIIl) end
+ end
+ end
+ end
+ end
+ }) _IllIIlIIll.br:Section({ Title = "\070\117\101\108", Icon = "\102\108\097\109\101" }) local _llIIlIllIl = {} _IllIIlIIll.br:Dropdown({ Title = "\083\101\108\101\099\116\032\070\117\101\108\032\073\116\101\109\115", Desc = "\067\104\111\111\115\101\032\105\116\101\109\115\032\116\111\032\098\114\105\110\103", Values = { "\076\111\103", "\067\104\097\105\114", "\067\111\097\108", "\070\117\101\108\032\067\097\110\105\115\116\101\114", "\079\105\108\032\066\097\114\114\101\108" }, Multi = true, AllowNone = true, Callback = function (p222) _llIIlIllIl = p222 end
+ }) _IllIIlIIll.br:Button({ Title = "\066\114\105\110\103\032\070\117\101\108\032\073\116\101\109\115", Locked = false, Callback = function () local _IIIIIlIlII = game.Players.LocalPlayer if _IIIIIlIlII.Character and _IIIIIlIlII.Character:FindFirstChild("\072\117\109\097\110\111\105\100\082\111\111\116\080\097\114\116") then local _llIllIIIII = _IIIIIlIlII.Character.HumanoidRootPart.Position + Vector3.new(0x2, 0x0, 0x0) local _IlIlllllll, v226, v227 = ipairs(_llIIlIllIl) local _IIllIIlIll = 0x0 while true do local _llllllIlIl v227, _llllllIlIl = _IlIlllllll(v226, v227) if v227 == nil then break end
+ local _IlIlIIlIII, v231, v232 = ipairs(workspace:GetDescendants()) while true do local _lIllIlllIl v232, _lIllIlllIl = _IlIlIIlIII(v231, v232) if v232 == nil then break end
+ if _lIllIlllIl.Name == _llllllIlIl and (_lIllIlllIl:IsA("\066\097\115\101\080\097\114\116") or _lIllIlllIl:IsA("\077\111\100\101\108")) then _llIIlIlllI(_lIllIlllIl, _llIllIIIII) _IIllIIlIll = _IIllIIlIll + 0x1 end
+ end
+ end
+ end
+ end
+ }) _IllIIlIIll.br:Section({ Title = "\070\111\111\100", Icon = "\117\116\101\110\115\105\108\115" }) local _lIIlIIIIII = {} _IllIIlIIll.br:Dropdown({ Title = "\083\101\108\101\099\116\032\070\111\111\100\032\073\116\101\109\115", Desc = "\067\104\111\111\115\101\032\105\116\101\109\115\032\116\111\032\098\114\105\110\103", Values = { "\067\097\107\101", "\067\111\111\107\101\100\032\083\116\101\097\107", "\067\111\111\107\101\100\032\077\111\114\115\101\108", "\083\116\101\097\107", "\077\111\114\115\101\108", "\066\101\114\114\121", "\067\097\114\114\111\116" }, Multi = true, AllowNone = true, Callback = function (p235) _lIIlIIIIII = p235 end
+ }) _IllIIlIIll.br:Button({ Title = "\066\114\105\110\103\032\070\111\111\100\032\073\116\101\109\115", Locked = false, Callback = function () local _IllllIIIlI = game.Players.LocalPlayer if _IllllIIIlI.Character and _IllllIIIlI.Character:FindFirstChild("\072\117\109\097\110\111\105\100\082\111\111\116\080\097\114\116") then local _lIIllIIlII = _IllllIIIlI.Character.HumanoidRootPart.Position + Vector3.new(0x2, 0x0, 0x0) local _llllllIIll, v239, v240 = ipairs(_lIIlIIIIII) while true do local _lIlllIIIll v240, _lIlllIIIll = _llllllIIll(v239, v240) if v240 == nil then break end
+ local _llIIIlllll, v243, v244 = ipairs(workspace:GetDescendants()) while true do local _IIlIllIlIl v244, _IIlIllIlIl = _llIIIlllll(v243, v244) if v244 == nil then break end
+ if _IIlIllIlIl.Name == _lIlllIIIll and (_IIlIllIlIl:IsA("\066\097\115\101\080\097\114\116") or _IIlIllIlIl:IsA("\077\111\100\101\108")) and (_IIlIllIlIl.PrimaryPart or _IIlIllIlIl:FindFirstChildWhichIsA("\066\097\115\101\080\097\114\116")) then _llIIlIlllI(_IIlIllIlIl, _lIIllIIlII) end
+ end
+ end
+ end
+ end
+ }) _IllIIlIIll.br:Section({ Title = "\077\101\100\105\099\105\110\101", Icon = "\098\097\110\100\097\103\101" }) _IllIIlIIll.br:Dropdown({ Title = "\083\101\108\101\099\116\032\077\101\100\105\099\097\108\032\073\116\101\109\115", Desc = "\067\104\111\111\115\101\032\105\116\101\109\115\032\116\111\032\098\114\105\110\103", Values = { "\066\097\110\100\097\103\101", "\077\101\100\075\105\116" }, Multi = true, AllowNone = true, Callback = function (p246) _llIllIllII = p246 end
+ }) _IllIIlIIll.br:Button({ Title = "\066\114\105\110\103\032\077\101\100\105\099\097\108\032\073\116\101\109\115", Locked = false, Callback = function () local _lIIllllIII = game.Players.LocalPlayer if _lIIllllIII.Character and _lIIllllIII.Character:FindFirstChild("\072\117\109\097\110\111\105\100\082\111\111\116\080\097\114\116") then local _llIlllIIll = _lIIllllIII.Character.HumanoidRootPart.Position + Vector3.new(0x2, 0x0, 0x0) local _lIllIlIIll, v250, v251 = ipairs(_llIllIllII) while true do local _IIIlllIlIl v251, _IIIlllIlIl = _lIllIlIIll(v250, v251) if v251 == nil then break end
+ local _llllIIlIlI, v254, v255 = ipairs(workspace:GetDescendants()) while true do local _lIllIlIlll v255, _lIllIlIlll = _llllIIlIlI(v254, v255) if v255 == nil then break end
+ if _lIllIlIlll.Name == _IIIlllIlIl and (_lIllIlIlll:IsA("\066\097\115\101\080\097\114\116") or _lIllIlIlll:IsA("\077\111\100\101\108")) and (_lIllIlIlll.PrimaryPart or _lIllIlIlll:FindFirstChildWhichIsA("\066\097\115\101\080\097\114\116")) then _llIIlIlllI(_lIllIlIlll, _llIlllIIll) end
+ end
+ end
+ end
+ end
+ }) _IllIIlIIll.br:Section({ Title = "\069\113\117\105\112\109\101\110\116", Icon = "\115\119\111\114\100" }) local _lIIIlllIll = {} _IllIIlIIll.br:Dropdown({ Title = "\083\101\108\101\099\116\032\069\113\117\105\112\109\101\110\116\032\073\116\101\109\115", Desc = "\067\104\111\111\115\101\032\105\116\101\109\115\032\116\111\032\098\114\105\110\103", Values = { "\082\101\118\111\108\118\101\114", "\082\105\102\108\101", "\076\101\097\116\104\101\114\032\066\111\100\121", "\073\114\111\110\032\066\111\100\121", "\082\101\118\111\108\118\101\114\032\065\109\109\111", "\082\105\102\108\101\032\065\109\109\111", "\071\105\097\110\116\032\083\097\099\107", "\071\111\111\100\032\083\097\099\107", "\083\116\114\111\110\103\032\065\120\101", "\071\111\111\100\032\065\120\101" }, Multi = true, AllowNone = true, Callback = function (p258) _lIIIlllIll = p258 end
+ }) _IllIIlIIll.br:Button({ Title = "\066\114\105\110\103\032\069\113\117\105\112\109\101\110\116\032\073\116\101\109\115", Locked = false, Callback = function () local _IlIlIllIlI = game.Players.LocalPlayer if _IlIlIllIlI.Character and _IlIlIllIlI.Character:FindFirstChild("\072\117\109\097\110\111\105\100\082\111\111\116\080\097\114\116") then local _IlllIIIIll = _IlIlIllIlI.Character.HumanoidRootPart.Position + Vector3.new(0x2, 0x0, 0x0) local _IllIIIlIII, v262, v263 = ipairs(_lIIIlllIll) while true do local _IlIllllIII v263, _IlIllllIII = _IllIIIlIII(v262, v263) if v263 == nil then break end
+ local _llIllIIllI, v266, v267 = ipairs(workspace:GetDescendants()) while true do local _lIlllIlIIl v267, _lIlllIlIIl = _llIllIIllI(v266, v267) if v267 == nil then break end
+ if _lIlllIlIIl.Name == _IlIllllIII and (_lIlllIlIIl:IsA("\066\097\115\101\080\097\114\116") or _lIlllIlIIl:IsA("\077\111\100\101\108")) and (_lIlllIlIIl.PrimaryPart or _lIlllIlIIl:FindFirstChildWhichIsA("\066\097\115\101\080\097\114\116")) then _llIIlIlllI(_lIlllIlIIl, _IlllIIIIll) end
+ end
+ end
+ end
+ end
+ }) _IllIIlIIll.Fly:Section({ Title = "\077\097\105\110", Icon = "\101\121\101" }) _IllIIlIIll.Fly:Slider({ Title = "\070\108\121\032\083\112\101\101\100", Value = { Min = 0x1, Max = 0x14, Default = 0x1 }, Callback = function (p269) _lIlIIIlIll = p269 if _llIllIllIl then task.spawn( function () while _llIllIllIl do task.wait(0.1) if game:GetService("\085\115\101\114\073\110\112\117\116\083\101\114\118\105\099\101").TouchEnabled then local _lIIIllllII = _IllIIlllIl.LocalPlayer.Character if _lIIIllllII then _lIIIllllII = _IllIIlllIl.LocalPlayer.Character:FindFirstChild("\072\117\109\097\110\111\105\100\082\111\111\116\080\097\114\116") end
+ if _lIIIllllII and _lIIIllllII:FindFirstChild("\066\111\100\121\086\101\108\111\099\105\116\121") then local _llIIlIllll = _lIIIllllII:FindFirstChild("\066\111\100\121\086\101\108\111\099\105\116\121") _llIIlIllll.Velocity = _llIIlIllll.Velocity.Unit * (_lIlIIIlIll * 0x32) end
+ end
+ end
+ end
+ ) end
+ end
+ }) _IllIIlIIll.Fly:Toggle({ Title = "\069\110\097\098\108\101\032\070\108\121", Value = false, Callback = function (p272) _lIlIIlllll = p272 if _lIlIIlllll then if game:GetService("\085\115\101\114\073\110\112\117\116\083\101\114\118\105\099\101").TouchEnabled then _IIlIIlIllI() else _IIlIlIlIlI() end
+ else _IlIIlIllll() _lllIIIlIlI() end
+ end
+ }) local _IlIllllIII = game:GetService("\080\108\097\121\101\114\115") local _lIlllllllI = 0x10 local function _IllIlIllII(p275) local _IIllIIIlIl = _IlIllllIII.LocalPlayer.Character if _IIllIIIlIl then _IIllIIIlIl = _IlIllllIII.LocalPlayer.Character:FindFirstChildOfClass("\072\117\109\097\110\111\105\100") end
+ if _IIllIIIlIl then _IIllIIIlIl.WalkSpeed = p275 end
+ end
+ _IllIIlIIll.Fly:Slider({ Title = "\083\112\101\101\100", Value = { Min = 0x10, Max = 0x96, Default = 0x10 }, Callback = function (p278) _lIlllllllI = p278 end
+ }) _IllIIlIIll.Fly:Toggle({ Title = "\069\110\097\098\108\101\032\083\112\101\101\100", Value = false, Callback = function (p279) _IllIlIllII(p279 and _lIlllllllI or 0x10) end
+ }) local _IIIllIllIl = game:GetService("\080\108\097\121\101\114\115") local _IIlIlIIIlI = game:GetService("\082\117\110\083\101\114\118\105\099\101") local _IIllllllIl = nil _IllIIlIIll.Fly:Toggle({ Title = "\078\111\099\108\105\112", Value = false, Callback = function (p283) if p283 then _IIllllllIl = _IIlIlIIIlI.Stepped:Connect( function () local _IlIIlIllII = _IIIllIllIl.LocalPlayer.Character if _IlIIlIllII then local _IIlIlIlllI, v286, v287 = ipairs(_IlIIlIllII:GetDescendants()) while true do local _IIIllIllIl v287, _IIIllIllIl = _IIlIlIlllI(v286, v287) if v287 == nil then break end
+ if _IIIllIllIl:IsA("\066\097\115\101\080\097\114\116") then _IIIllIllIl.CanCollide = false end
+ end
+ end
+ end
+ ) elseif _IIllllllIl then _IIllllllIl:Disconnect() _IIllllllIl = nil end
+ end
+ }) local _IIlIIIIIll = game:GetService("\085\115\101\114\073\110\112\117\116\083\101\114\118\105\099\101") local _llIlllIIlI = game:GetService("\080\108\097\121\101\114\115") local _IIIlIllllI = nil _IllIIlIIll.Fly:Toggle({ Title = "\073\110\102\032\074\117\109\112", Value = false, Callback = function (p292) if p292 then _IIIlIllllI = _IIlIIIIIll.JumpRequest:Connect( function () local _lIIIIIllII = _llIlllIIlI.LocalPlayer.Character if _lIIIIIllII then _lIIIIIllII = _lIIIIIllII:FindFirstChildOfClass("\072\117\109\097\110\111\105\100") end
+ if _lIIIIIllII then _lIIIIIllII:ChangeState(Enum.HumanoidStateType.Jumping) end
+ end
+ ) elseif _IIIlIllllI then _IIIlIllllI:Disconnect() _IIIlIllllI = nil end
+ end
+ }) function createESPText(p294, p295, p296) if not p294:FindFirstChild("\069\083\080\084\101\120\116\111") then local _IIlIIlIlIl = Instance.new("\066\105\108\108\098\111\097\114\100\071\117\105") _IIlIIlIlIl.Name = "\069\083\080\084\101\120\116\111" _IIlIIlIlIl.Adornee = p294 _IIlIIlIlIl.Size = UDim2.new(0x0, 0x64, 0x0, 0x14) _IIlIIlIlIl.StudsOffset = Vector3.new(0x0, 2.5, 0x0) _IIlIIlIlIl.AlwaysOnTop = true _IIlIIlIlIl.MaxDistance = 0x12C local _IIlIllllIl = Instance.new("\084\101\120\116\076\097\098\101\108") _IIlIllllIl.Parent = _IIlIIlIlIl _IIlIllllIl.Size = UDim2.new(0x1, 0x0, 0x1, 0x0) _IIlIllllIl.BackgroundTransparency = 0x1 _IIlIllllIl.Text = p295 _IIlIllllIl.TextColor3 = p296 or Color3.fromRGB(0xFF, 0xFF, 0x0) _IIlIllllIl.TextStrokeTransparency = 0.2 _IIlIllllIl.TextScaled = true _IIlIllllIl.Font = Enum.Font.GothamBold _IIlIIlIlIl.Parent = p294 end
+ end
+ local function _lllIIlIlll(p299, p300) local _IllIIIlIlI, v302 if p300 == "\105\116\101\109" then _IllIIIlIlI = workspace:FindFirstChild("\073\116\101\109\115") v302 = Color3.fromRGB(0x0, 0xFF, 0x0) else if p300 ~= "\109\111\098" then return end
+ _IllIIIlIlI = workspace:FindFirstChild("\067\104\097\114\097\099\116\101\114\115") v302 = Color3.fromRGB(0xFF, 0xFF, 0x0) end
+ if _IllIIIlIlI then local _IlIIIIlIlI, v304, v305 = ipairs(_IllIIIlIlI:GetChildren()) while true do local _IIIllIllll v305, _IIIllIllll = _IlIIIIlIlI(v304, v305) if v305 == nil then break end
+ if _IIIllIllll.Name == p299 then local _IlllIIIlII = _IIIllIllll:IsA("\066\097\115\101\080\097\114\116") and _IIIllIllll and _IIIllIllll or _IIIllIllll:FindFirstChildWhichIsA("\066\097\115\101\080\097\114\116") if _IlllIIIlII then createESPText(_IlllIIIlII, _IIIllIllll.Name, v302) end
+ end
+ end
+ end
+ end
+ local function _IIIlllllIl(p309, p310) local _lIlllIlllI if p310 == "\105\116\101\109" then _lIlllIlllI = workspace:FindFirstChild("\073\116\101\109\115") else if p310 ~= "\109\111\098" then return end
+ _lIlllIlllI = workspace:FindFirstChild("\067\104\097\114\097\099\116\101\114\115") end
+ if _lIlllIlllI then local _lIIIIlllII, v313, v314 = ipairs(_lIlllIlllI:GetChildren()) while true do local _lllIllIlII v314, _lllIllIlII = _lIIIIlllII(v313, v314) if v314 == nil then break end
+ if _lllIllIlII.Name == p309 then local _lIlllIIlll = _lllIllIlII:IsA("\066\097\115\101\080\097\114\116") and _lllIllIlII and _lllIllIlII or _lllIllIlII:FindFirstChildWhichIsA("\066\097\115\101\080\097\114\116") if _lIlllIIlll then local _IIIIlllIll, v318, v319 = ipairs(_lIlllIIlll:GetChildren()) while true do local _IlIIllllll v319, _IlIIllllll = _IIIIlllIll(v318, v319) if v319 == nil then break end
+ if _IlIIllllll:IsA("\066\105\108\108\098\111\097\114\100\071\117\105") and _IlIIllllll.Name == "\069\083\080\084\101\120\116\111" then _IlIIllllll:Destroy() end
+ end
+ end
+ end
+ end
+ end
+ end
+ local _IIllIlIIIl = {} local _lIllIlIIIl = {} local _lIlIlllIII = false local _IIIIIIIlII = false local _lIllIlIllI = {} _IllIIlIIll.esp:Section({ Title = "\069\115\112\032\073\116\101\109\115", Icon = "\112\097\099\107\097\103\101" }) _IllIIlIIll.esp:Dropdown({ Title = "\069\115\112\032\073\116\101\109\115", Values = _IlllIlIIII, Value = {}, Multi = true, AllowNone = true, Callback = function (p327) _IIllIlIIIl = p327 if _lIlIlllIII then local _IlllIIllII, v329, v330 = ipairs(_IlllIlIIII) while true do local _IlIlIllIlI v330, _IlIlIllIlI = _IlllIIllII(v329, v330) if v330 == nil then break end
+ if table.find(_IIllIlIIIl, _IlIlIllIlI) then _lllIIlIlll(_IlIlIllIlI, "\105\116\101\109") else _IIIlllllIl(_IlIlIllIlI, "\105\116\101\109") end
+ end
+ else local _IlIIIIlIIl, v333, v334 = ipairs(_IlllIlIIII) while true do local _IIlIllIIll v334, _IIlIllIIll = _IlIIIIlIIl(v333, v334) if v334 == nil then break end
+ _IIIlllllIl(_IIlIllIIll, "\105\116\101\109") end
+ end
+ end
+ }) _IllIIlIIll.esp:Toggle({ Title = "\069\110\097\098\108\101\032\069\115\112", Value = false, Callback = function (p336) _lIlIlllIII = p336 local _llIIIIIlIl, v338, v339 = ipairs(_IlllIlIIII) while true do local _lIllIIllIl v339, _lIllIIllIl = _llIIIIIlIl(v338, v339) if v339 == nil then break end
+ if p336 and table.find(_IIllIlIIIl, _lIllIIllIl) then _lllIIlIlll(_lIllIIllIl, "\105\116\101\109") else _IIIlllllIl(_lIllIIllIl, "\105\116\101\109") end
+ end
+ if p336 then local _llllIIllll = not _lIllIlIllI.Items and workspace:FindFirstChild("\073\116\101\109\115") if _llllIIllll then _lIllIlIllI.Items = _llllIIllll.ChildAdded:Connect( function (p342) local _IlIIIIIIIl = table.find(_IIllIlIIIl, p342.Name) and (p342:IsA("\066\097\115\101\080\097\114\116") and p342 and p342 or p342:FindFirstChildWhichIsA("\066\097\115\101\080\097\114\116")) if _IlIIIIIIIl then createESP(_IlIIIIIIIl, p342.Name, Color3.fromRGB(0x0, 0xFF, 0x0)) end
+ end
+ ) end
+ elseif _lIllIlIllI.Items then _lIllIlIllI.Items:Disconnect() _lIllIlIllI.Items = nil end
+ end
+ }) _IllIIlIIll.esp:Section({ Title = "\069\115\112\032\069\110\116\105\116\121", Icon = "\117\115\101\114" }) _IllIIlIIll.esp:Dropdown({ Title = "\069\115\112\032\069\110\116\105\116\121", Values = _lIlIllIIlI, Value = {}, Multi = true, AllowNone = true, Callback = function (p344) _lIllIlIIIl = p344 if _IIIIIIIlII then local _lIIIllIllI, v346, v347 = ipairs(_lIlIllIIlI) while true do local _llIIlllIIl v347, _llIIlllIIl = _lIIIllIllI(v346, v347) if v347 == nil then break end
+ if table.find(_lIllIlIIIl, _llIIlllIIl) then _lllIIlIlll(_llIIlllIIl, "\109\111\098") else _IIIlllllIl(_llIIlllIIl, "\109\111\098") end
+ end
+ else local _IlllIllIIl, v350, v351 = ipairs(_lIlIllIIlI) while true do local _llllIIlIlI v351, _llllIIlIlI = _IlllIllIIl(v350, v351) if v351 == nil then break end
+ _IIIlllllIl(_llllIIlIlI, "\109\111\098") end
+ end
+ end
+ }) _IllIIlIIll.esp:Toggle({ Title = "\069\110\097\098\108\101\032\069\115\112", Value = false, Callback = function (p353) _IIIIIIIlII = p353 local _IlIIIlIlll, v355, v356 = ipairs(_lIlIllIIlI) while true do local _lIIIlllllI v356, _lIIIlllllI = _IlIIIlIlll(v355, v356) if v356 == nil then break end
+ if p353 and table.find(_lIllIlIIIl, _lIIIlllllI) then _lllIIlIlll(_lIIIlllllI, "\109\111\098") else _IIIlllllIl(_lIIIlllllI, "\109\111\098") end
+ end
+ if p353 then local _lIlllllIII = not _lIllIlIllI.Mobs and workspace:FindFirstChild("\067\104\097\114\097\099\116\101\114\115") if _lIlllllIII then _lIllIlIllI.Mobs = _lIlllllIII.ChildAdded:Connect( function (p359) local _lIIIIIIlIl = table.find(_lIllIlIIIl, p359.Name) and (p359:IsA("\066\097\115\101\080\097\114\116") and p359 and p359 or p359:FindFirstChildWhichIsA("\066\097\115\101\080\097\114\116")) if _lIIIIIIlIl then createESP(_lIIIIIIlIl, p359.Name, Color3.fromRGB(0xFF, 0xFF, 0x0)) end
+ end
+ ) end
+ elseif _lIllIlIllI.Mobs then _lIllIlIllI.Mobs:Disconnect() _lIllIlIllI.Mobs = nil end
+ end
+ }) _IllIIlIIll.Main:Section({ Title = "\077\105\115\099", Icon = "\115\101\116\116\105\110\103\115" }) local _lllllllIIl = false local _lIIlIIIIII = nil local _IIlllIIIII = {} _IllIIlIIll.Main:Toggle({ Title = "\073\110\115\116\097\110\116\032\073\110\116\101\114\097\099\116", Value = false, Callback = function (p364) _lllllllIIl = p364 if p364 then _IIlllIIIII = {} _lIIlIIIIII = task.spawn( function () while _lllllllIIl do local _IIlllllIIl, v366, v367 = ipairs(workspace:GetDescendants()) while true do local _lIlIllIllI v367, _lIlIllIllI = _IIlllllIIl(v366, v367) if v367 == nil then break end
+ if _lIlIllIllI:IsA("\080\114\111\120\105\109\105\116\121\080\114\111\109\112\116") then if _IIlllIIIII[_lIlIllIllI] == nil then _IIlllIIIII[_lIlIllIllI] = _lIlIllIllI.HoldDuration end
+ _lIlIllIllI.HoldDuration = 0x0 end
+ end
+ task.wait(0.5) end
+ end
+ ) else if _lIIlIIIIII then _lllllllIIl = false end
+ local _IIIlIIlllI, v370, v371 = pairs(_IIlllIIIII) while true do local _IIIIllIIlI v371, _IIIIllIIlI = _IIIlIIlllI(v370, v371) if v371 == nil then break end
+ if v371 and v371:IsA("\080\114\111\120\105\109\105\116\121\080\114\111\109\112\116") then v371.HoldDuration = _IIIIllIIlI end
+ end
+ _IIlllIIIII = {} end
+ end
+ }) local _IlllIllIll = game:GetService("\082\117\110\083\101\114\118\105\099\101") local _llIIlIIlIl = game:GetService("\082\101\112\108\105\099\097\116\101\100\083\116\111\114\097\103\101") local _IllllIlIlI = nil _IllIIlIIll.Main:Toggle({ Title = "\065\117\116\111\032\083\116\117\110\032\068\101\101\114", Value = false, Callback = function (p376) if p376 then _IllllIlIlI = _IlllIllIll.RenderStepped:Connect( function () pcall( function () local _IlllIIllII = _llIIlIIlIl:FindFirstChild("\082\101\109\111\116\101\069\118\101\110\116\115") if _IlllIIllII then _IlllIIllII = _llIIlIIlIl.RemoteEvents:FindFirstChild("\068\101\101\114\072\105\116\066\121\084\111\114\099\104") end
+ local _IIIlIlllll = workspace:FindFirstChild("\067\104\097\114\097\099\116\101\114\115") if _IIIlIlllll then _IIIlIlllll = workspace.Characters:FindFirstChild("\068\101\101\114") end
+ if _IlllIIllII and _IIIlIlllll then _IlllIIllII:InvokeServer(_IIIlIlllll) end
+ end
+ ) task.wait(0.1) end
+ ) elseif _IllllIlIlI then _IllllIlIlI:Disconnect() _IllllIlIlI = nil end
+ end
+ }) _IllIIlIIll.About:Button({ Title = "\071\101\116\032\068\105\115\099\111\114\100\032\076\105\110\107", Locked = false, Callback = function () setclipboard("\104\116\116\112\115\058\047\047\100\105\115\099\111\114\100\046\103\103\047\116\066\099\100\100\087\065\080\054\052") end
+ }) _IllIIlIIll.About:Button({ Title = "\083\099\114\105\112\116\032\077\097\100\101\032\066\121\032\114\105\110\116\111\115\104\105\105\105\105", Locked = false, Callback = function () setclipboard("\104\116\116\112\115\058\047\047\100\105\115\099\111\114\100\046\103\103\047\116\066\099\100\100\087\065\080\054\052") end
+ }) end
+ )(...)
