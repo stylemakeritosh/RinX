@@ -33,6 +33,12 @@ local gameConfig = {
         loadstringUrl = "https://raw.githubusercontent.com/stylemakeritosh/RinX/refs/heads/main/BuildaislandX",
         correctKey = "BUILDAEPSTEIN4829",
         fileName = "rinxbuildaisland67.txt"
+    },
+    {
+        gameIds = {537413528},
+        loadstringUrl = "https://raw.githubusercontent.com/stylemakeritosh/RinX/refs/heads/main/BuildABoatTreasureFarmX",
+        correctKey = "BUILDABOATTASKITREASURE98",
+        fileName = "rinxbuildaboattreasurefarm.txt"
     }
 }
 
