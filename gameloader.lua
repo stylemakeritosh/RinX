@@ -1,0 +1,497 @@
+-- Services
+local HttpService = game:GetService("HttpService")
+local Players = game:GetService("Players")
+local UserInputService = game:GetService("UserInputService")
+local TweenService = game:GetService("TweenService")
+local CoreGui = game:GetService("CoreGui")
+local LocalPlayer = Players.LocalPlayer
+local player = LocalPlayer
+local gameId = game.PlaceId
+
+-- Configuration table with support for multiple game IDs
+local gameConfig = {
+    {
+        gameIds = {136801880565837},
+        loadstringUrl = "https://raw.githubusercontent.com/stylemakeritosh/RinX/refs/heads/main/FlickX",
+        correctKey = "FLIRINWOND4444",
+        fileName = "FlickrinKeys.txt"
+    },
+    {
+        gameIds = {126509999114328},
+        loadstringUrl = "https://raw.githubusercontent.com/stylemakeritosh/RinX/refs/heads/main/99NightXX",
+        correctKey = "PIECE99FOREST4536",
+        fileName = "99nightsnewsb.txt"
+    },
+    {
+        gameIds = {83645629621104},
+        loadstringUrl = "https://raw.githubusercontent.com/stylemakeritosh/RinX/refs/heads/main/ForsakenX",
+        correctKey = "ZORFORSAKENTOSH6941",
+        fileName = "forsakennewrinxhubera.txt"
+    },
+    {
+        gameIds = {101949297449238},
+        loadstringUrl = "https://raw.githubusercontent.com/stylemakeritosh/RinX/refs/heads/main/BuildaislandX",
+        correctKey = "BUILDAEPSTEIN4829",
+        fileName = "rinxbuildaisland67.txt"
+    }
+}
+
+-- Helper function to check if gameId exists in any config
+local function getConfigForGameId(gameId)
+    for _, config in ipairs(gameConfig) do
+        for _, id in ipairs(config.gameIds) do
+            if id == gameId then
+                return config
+            end
+        end
+    end
+    return nil
+end
+
+-- File Operations
+local function saveKey(fileName, key)
+    writefile(fileName, key)
+end
+
+local function loadKey(fileName)
+    if isfile(fileName) then
+        return readfile(fileName)
+    end
+    return nil
+end
+
+local function deleteKeyFile(fileName)
+    if isfile(fileName) then
+        delfile(fileName)
+    end
+end
+
+-- Enhanced Loading GUI
+local loadingGui = Instance.new("ScreenGui")
+loadingGui.Name = "LoadingGui"
+loadingGui.Parent = player.PlayerGui
+loadingGui.Enabled = false
+
+local loadingFrame = Instance.new("Frame")
+loadingFrame.Size = UDim2.new(0, 200, 0, 200)
+loadingFrame.Position = UDim2.new(0.5, -100, 0.5, -100)
+loadingFrame.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+loadingFrame.BackgroundTransparency = 0.2
+loadingFrame.Parent = loadingGui
+
+local loadingCorner = Instance.new("UICorner")
+loadingCorner.CornerRadius = UDim.new(0, 15)
+loadingCorner.Parent = loadingFrame
+
+local spinnerOuter = Instance.new("Frame")
+spinnerOuter.Size = UDim2.new(0, 80, 0, 80)
+spinnerOuter.Position = UDim2.new(0.5, -40, 0.5, -60)
+spinnerOuter.BackgroundColor3 = Color3.fromRGB(255, 85, 85)
+spinnerOuter.Parent = loadingFrame
+local spinnerOuterCorner = Instance.new("UICorner")
+spinnerOuterCorner.CornerRadius = UDim.new(1, 0)
+spinnerOuterCorner.Parent = spinnerOuter
+
+local spinnerInner = Instance.new("Frame")
+spinnerInner.Size = UDim2.new(0, 40, 0, 40)
+spinnerInner.Position = UDim2.new(0.5, -20, 0.5, -20)
+spinnerInner.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+spinnerInner.Parent = spinnerOuter
+local spinnerInnerCorner = Instance.new("UICorner")
+spinnerInnerCorner.CornerRadius = UDim.new(1, 0)
+spinnerInnerCorner.Parent = spinnerInner
+
+local loadingText = Instance.new("TextLabel")
+loadingText.Size = UDim2.new(1, 0, 0, 30)
+loadingText.Position = UDim2.new(0, 0, 1, -40)
+loadingText.Text = "Loading..."
+loadingText.TextColor3 = Color3.fromRGB(255, 85, 85)
+loadingText.BackgroundTransparency = 1
+loadingText.Font = Enum.Font.GothamBold
+loadingText.TextSize = 24
+loadingText.Parent = loadingFrame
+
+local tweenOuter = TweenService:Create(spinnerOuter, TweenInfo.new(1.5, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, -1), {Rotation = 360})
+local tweenInner = TweenService:Create(spinnerInner, TweenInfo.new(1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, -1), {Rotation = -360})
+
+local function animateLoadingText()
+    local dots = 0
+    while loadingGui.Enabled do
+        loadingText.Text = "Loading" .. string.rep(".", dots)
+        dots = (dots + 1) % 4
+        task.wait(0.5)
+    end
+end
+
+-- New UI Design (Debug-2 Style)
+local KeySystem = Instance.new("ScreenGui")
+local Main = Instance.new("ImageLabel")
+local UICorner = Instance.new("UICorner")
+local Header = Instance.new("Frame")
+local Title = Instance.new("TextLabel")
+local Subtitle = Instance.new("TextLabel")
+local KeyInput = Instance.new("TextBox")
+local UICorner_2 = Instance.new("UICorner")
+local SubmitBtn = Instance.new("TextButton")
+local UICorner_3 = Instance.new("UICorner")
+local SupportText = Instance.new("TextLabel")
+local DiscordLink = Instance.new("TextButton")
+local ButtonsFrame = Instance.new("Frame")
+local GetKeyBtn = Instance.new("TextButton")
+local UICorner_4 = Instance.new("UICorner")
+local HowToBtn = Instance.new("TextButton")
+local UICorner_6 = Instance.new("UICorner")
+local ImageLabel_2 = Instance.new("ImageLabel")
+local UIStroke = Instance.new("UIStroke")
+
+KeySystem.Name = "KeySystem"
+KeySystem.Parent = CoreGui
+KeySystem.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Main.Name = "Main"
+Main.Parent = KeySystem
+Main.AnchorPoint = Vector2.new(0.5, 0.5)
+Main.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Main.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Main.BorderSizePixel = 0
+Main.Position = UDim2.new(0.5, 0, 0.5, 0)
+Main.Size = UDim2.new(0, 380, 0, 285)
+Main.Image = "rbxassetid://82454449164045"
+
+ImageLabel_2.Parent = Main
+ImageLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageLabel_2.BackgroundTransparency = 1
+ImageLabel_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ImageLabel_2.BorderSizePixel = 0
+ImageLabel_2.Position = UDim2.new(0.05, 0, 0.0717872535, 0)
+ImageLabel_2.Size = UDim2.new(0, 30, 0, 29)
+ImageLabel_2.Image = "rbxassetid://86394678796015"
+
+UICorner.CornerRadius = UDim.new(0, 12)
+UICorner.Parent = Main
+
+Header.Name = "Header"
+Header.Parent = Main
+Header.BackgroundTransparency = 1
+Header.Size = UDim2.new(1, 0, 0, 100)
+
+Title.Name = "Title"
+Title.Parent = Header
+Title.BackgroundTransparency = 1
+Title.Position = UDim2.new(0, 30, 0, 20)
+Title.Size = UDim2.new(1, -60, 0, 30)
+Title.Font = Enum.Font.GothamBold
+Title.Text = "    Welcome to The,"
+Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title.TextSize = 22
+Title.TextXAlignment = Enum.TextXAlignment.Left
+
+Subtitle.Name = "Subtitle"
+Subtitle.Parent = Header
+Subtitle.BackgroundTransparency = 1
+Subtitle.Position = UDim2.new(0, 30, 0, 50)
+Subtitle.Size = UDim2.new(1, -60, 0, 30)
+Subtitle.Font = Enum.Font.GothamBold
+Subtitle.Text = "Rin System"
+Subtitle.TextColor3 = Color3.fromRGB(255, 85, 85)
+Subtitle.TextSize = 22
+Subtitle.TextXAlignment = Enum.TextXAlignment.Left
+
+KeyInput.Name = "KeyInput"
+KeyInput.Parent = Main
+KeyInput.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+KeyInput.BorderSizePixel = 0
+KeyInput.Position = UDim2.new(0, 30, 0, 100)
+KeyInput.Size = UDim2.new(1, -60, 0, 45)
+KeyInput.Font = Enum.Font.Gotham
+KeyInput.PlaceholderColor3 = Color3.fromRGB(150, 150, 150)
+KeyInput.PlaceholderText = "Insert your key here"
+KeyInput.Text = ""
+KeyInput.TextColor3 = Color3.fromRGB(255, 255, 255)
+KeyInput.TextSize = 14
+KeyInput.TextTruncate = Enum.TextTruncate.AtEnd
+KeyInput.TextWrapped = true
+KeyInput.ClearTextOnFocus = false
+
+UIStroke.Name = "UIStroke"
+UIStroke.Parent = KeyInput
+UIStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+UIStroke.Color = Color3.fromRGB(50, 50, 50)
+UIStroke.LineJoinMode = Enum.LineJoinMode.Round
+UIStroke.Thickness = 1
+UIStroke.Transparency = 0
+
+UICorner_2.CornerRadius = UDim.new(0, 8)
+UICorner_2.Parent = KeyInput
+
+SubmitBtn.Name = "SubmitBtn"
+SubmitBtn.Parent = Main
+SubmitBtn.BackgroundColor3 = Color3.fromRGB(255, 85, 85)
+SubmitBtn.BorderSizePixel = 0
+SubmitBtn.Position = UDim2.new(0, 30, 0, 155)
+SubmitBtn.Size = UDim2.new(1, -60, 0, 45)
+SubmitBtn.Font = Enum.Font.GothamBold
+SubmitBtn.Text = "Submit Key >"
+SubmitBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
+SubmitBtn.TextSize = 16
+
+UICorner_3.CornerRadius = UDim.new(0, 8)
+UICorner_3.Parent = SubmitBtn
+
+SupportText.Name = "SupportText"
+SupportText.Parent = Main
+SupportText.BackgroundTransparency = 1
+SupportText.Position = UDim2.new(0, 95, 0, 255)
+SupportText.Size = UDim2.new(1, -60, 0, 20)
+SupportText.Font = Enum.Font.Gotham
+SupportText.Text = "Need support?"
+SupportText.TextColor3 = Color3.fromRGB(150, 150, 150)
+SupportText.TextSize = 13
+SupportText.TextXAlignment = Enum.TextXAlignment.Left
+
+DiscordLink.Name = "DiscordLink"
+DiscordLink.Parent = SupportText
+DiscordLink.BackgroundTransparency = 1
+DiscordLink.Position = UDim2.new(0, 92, 0, 0)
+DiscordLink.Size = UDim2.new(0, 150, 0, 20)
+DiscordLink.Font = Enum.Font.GothamBold
+DiscordLink.Text = "Join the Discord"
+DiscordLink.TextColor3 = Color3.fromRGB(255, 85, 85)
+DiscordLink.TextSize = 13
+DiscordLink.TextXAlignment = Enum.TextXAlignment.Left
+
+ButtonsFrame.Name = "ButtonsFrame"
+ButtonsFrame.Parent = Main
+ButtonsFrame.BackgroundTransparency = 1
+ButtonsFrame.Position = UDim2.new(0, 30, 0, 280)
+ButtonsFrame.Size = UDim2.new(1, -60, 0, 35)
+
+GetKeyBtn.Name = "GetKeyBtn"
+GetKeyBtn.Parent = ButtonsFrame
+GetKeyBtn.BackgroundColor3 = Color3.fromRGB(255, 85, 85)
+GetKeyBtn.BorderSizePixel = 0
+GetKeyBtn.Position = UDim2.new(0, 0, 0, -70)
+GetKeyBtn.Size = UDim2.new(0.6, -5, 1, 0)
+GetKeyBtn.Font = Enum.Font.GothamBold
+GetKeyBtn.Text = "Get Key"
+GetKeyBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
+GetKeyBtn.TextSize = 13
+
+UICorner_4.CornerRadius = UDim.new(0, 6)
+UICorner_4.Parent = GetKeyBtn
+
+HowToBtn.Name = "HowToBtn"
+HowToBtn.Parent = ButtonsFrame
+HowToBtn.BackgroundColor3 = Color3.fromRGB(45, 45, 50)
+HowToBtn.BorderSizePixel = 0
+HowToBtn.Position = UDim2.new(0.6, 0, 0, -70)
+HowToBtn.Size = UDim2.new(0.4, 0, 1, 0)
+HowToBtn.Font = Enum.Font.Gotham
+HowToBtn.Text = "How to Get Key?"
+HowToBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
+HowToBtn.TextSize = 13
+
+UICorner_6.CornerRadius = UDim.new(0, 6)
+UICorner_6.Parent = HowToBtn
+
+-- Button Animations
+SubmitBtn.MouseEnter:Connect(function()
+    TweenService:Create(SubmitBtn, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+        BackgroundColor3 = Color3.fromRGB(200, 70, 70),
+        Size = UDim2.new(1, -55, 0, 47)
+    }):Play()
+end)
+
+SubmitBtn.MouseLeave:Connect(function()
+    TweenService:Create(SubmitBtn, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+        BackgroundColor3 = Color3.fromRGB(255, 85, 85),
+        Size = UDim2.new(1, -60, 0, 45)
+    }):Play()
+end)
+
+GetKeyBtn.MouseEnter:Connect(function()
+    TweenService:Create(GetKeyBtn, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+        BackgroundColor3 = Color3.fromRGB(200, 70, 70),
+        Size = UDim2.new(0.6, -3, 1, 2)
+    }):Play()
+end)
+
+GetKeyBtn.MouseLeave:Connect(function()
+    TweenService:Create(GetKeyBtn, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+        BackgroundColor3 = Color3.fromRGB(255, 85, 85),
+        Size = UDim2.new(0.6, -5, 1, 0)
+    }):Play()
+end)
+
+HowToBtn.MouseEnter:Connect(function()
+    TweenService:Create(HowToBtn, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+        BackgroundColor3 = Color3.fromRGB(60, 60, 65),
+        Size = UDim2.new(0.4, 2, 1, 2)
+    }):Play()
+end)
+
+HowToBtn.MouseLeave:Connect(function()
+    TweenService:Create(HowToBtn, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+        BackgroundColor3 = Color3.fromRGB(45, 45, 50),
+        Size = UDim2.new(0.4, 0, 1, 0)
+    }):Play()
+end)
+
+DiscordLink.MouseEnter:Connect(function()
+    TweenService:Create(DiscordLink, TweenInfo.new(0.2), {TextColor3 = Color3.fromRGB(200, 70, 70)}):Play()
+end)
+
+DiscordLink.MouseLeave:Connect(function()
+    TweenService:Create(DiscordLink, TweenInfo.new(0.2), {TextColor3 = Color3.fromRGB(255, 85, 85)}):Play()
+end)
+
+-- Draggable Function
+local function makeDraggable(element)
+    local dragging, dragInput, dragStart, startPos
+    local function update(input)
+        local delta = input.Position - dragStart
+        local newPos = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+        local tweenInfo = TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+        TweenService:Create(element, tweenInfo, {Position = newPos}):Play()
+    end
+    element.InputBegan:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+            dragging = true
+            dragStart = input.Position
+            startPos = element.Position
+            input.Changed:Connect(function()
+                if input.UserInputState == Enum.UserInputState.End then dragging = false end
+            end)
+        end
+    end)
+    element.InputChanged:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+            dragInput = input
+        end
+    end)
+    UserInputService.InputChanged:Connect(function(input)
+        if input == dragInput and dragging then update(input) end
+    end)
+end
+
+makeDraggable(Main)
+
+-- Function to load and execute the loadstring for the current game
+local function loadGameScript()
+    local config = getConfigForGameId(gameId)
+    
+    if not config then
+        warn("No configuration found for Game ID: " .. gameId)
+        game.StarterGui:SetCore("SendNotification", {
+            Title = "Error",
+            Text = "No script available for this game!",
+            Duration = 5
+        })
+        return
+    end
+
+    local correctKey = config.correctKey
+    local loadstringUrl = config.loadstringUrl
+    local fileName = config.fileName
+    local keyVerified = false
+
+    -- Load saved key if exists
+    KeyInput.Text = loadKey(fileName) or ""
+
+    -- Button Connections
+    SubmitBtn.MouseButton1Click:Connect(function()
+        if KeyInput.Text == correctKey then
+            saveKey(fileName, KeyInput.Text)
+            keyVerified = true
+            
+            -- Fade out key system UI
+            local tweenInfo = TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.In)
+            TweenService:Create(Main, tweenInfo, {BackgroundTransparency = 1}):Play()
+            for _, child in ipairs(Main:GetDescendants()) do
+                if child:IsA("GuiObject") then
+                    if child:IsA("TextLabel") or child:IsA("TextButton") or child:IsA("TextBox") then
+                        TweenService:Create(child, tweenInfo, {BackgroundTransparency = 1, TextTransparency = 1}):Play()
+                    else
+                        TweenService:Create(child, tweenInfo, {BackgroundTransparency = 1}):Play()
+                    end
+                elseif child:IsA("UIStroke") then
+                    TweenService:Create(child, tweenInfo, {Transparency = 1}):Play()
+                end
+            end
+            
+            task.wait(0.3)
+            KeySystem:Destroy()
+            
+            -- Show loading GUI
+            loadingGui.Enabled = true
+            tweenOuter:Play()
+            tweenInner:Play()
+            task.spawn(animateLoadingText)
+            
+            task.delay(3, function()
+                local success, result = pcall(function()
+                    local loadstringCode = game:HttpGet(loadstringUrl)
+                    return loadstring(loadstringCode)()
+                end)
+                
+                loadingGui:Destroy()
+                
+                if success then
+                    game.StarterGui:SetCore("SendNotification", {
+                        Title = "Success",
+                        Text = "Script loaded successfully!",
+                        Duration = 3
+                    })
+                else
+                    warn("Failed to execute loadstring for Game ID " .. gameId .. ": " .. tostring(result))
+                    game.StarterGui:SetCore("SendNotification", {
+                        Title = "Error",
+                        Text = "Failed to load script!",
+                        Duration = 5
+                    })
+                end
+            end)
+        else
+            game.StarterGui:SetCore("SendNotification", {
+                Title = "Invalid Key",
+                Text = "Please enter the correct key!",
+                Duration = 3
+            })
+            local tweenInfo = TweenInfo.new(0.05, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut, 4, true)
+            TweenService:Create(Main, tweenInfo, {Position = Main.Position + UDim2.new(0, 10, 0, 0)}):Play()
+        end
+    end)
+
+    GetKeyBtn.MouseButton1Click:Connect(function()
+        setclipboard("https://discord.gg/nHS3RxTM5M")
+        game:GetService("StarterGui"):SetCore("SendNotification", {
+            Title = "Key Link",
+            Text = "Link for the key copied to clipboard!",
+            Duration = 5
+        })
+    end)
+
+    HowToBtn.MouseButton1Click:Connect(function()
+        setclipboard("https://discord.gg/tBcddWAP64")
+        game.StarterGui:SetCore("SendNotification", {
+            Title = "Tutorial",
+            Text = "Discord link copied for key tutorial!",
+            Duration = 3
+        })
+    end)
+
+    DiscordLink.MouseButton1Click:Connect(function()
+        setclipboard("https://discord.gg/tBcddWAP64")
+        game.StarterGui:SetCore("SendNotification", {
+            Title = "Support Link",
+            Text = "Discord support link copied!",
+            Duration = 3
+        })
+    end)
+
+    -- Wait for key verification
+    while not keyVerified do task.wait() end
+end
+
+-- Execute the loadstring for the current game
+loadGameScript()
