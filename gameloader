@@ -57,6 +57,12 @@ local gameConfig = {
         loadstringUrl = "https://raw.githubusercontent.com/stylemakeritosh/RinX/refs/heads/main/EvadeeX",
         correctKey = "RINXEVADE83639",
         fileName = "evaderinxnews.txt"
+    }, 
+    {
+        gameIds = {124473577469410},
+        loadstringUrl = "https://raw.githubusercontent.com/stylemakeritosh/RinX/refs/heads/main/BeALuckyBlockX",
+        correctKey = "LAPOLUCKYBLOCKDIHRIN729",
+        fileName = "bealuckyblocksonns.txt"
     }
 }
 
