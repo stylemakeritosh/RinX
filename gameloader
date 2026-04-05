@@ -24,8 +24,8 @@ local gameConfig = {
     },
     {
         gameIds = {83645629621104},
-        loadstringUrl = "https://raw.githubusercontent.com/stylemakeritosh/RinX/refs/heads/main/ForsakenX",
-        correctKey = "ZORFORSAKENTOSH6941",
+        loadstringUrl = "https://raw.githubusercontent.com/stylemakeritosh/RinX/refs/heads/main/ForsakenXUpd",
+        correctKey = "RINFORSAKENTOSHUPD8371",
         fileName = "forsakennewrinxhubera.txt"
     },
     {
@@ -63,7 +63,13 @@ local gameConfig = {
         loadstringUrl = "https://raw.githubusercontent.com/stylemakeritosh/RinX/refs/heads/main/BeALuckyBlockX",
         correctKey = "LAPOLUCKYBLOCKDIHRIN729",
         fileName = "bealuckyblocksonns.txt"
-    }
+    },
+    {
+        gameIds = {142823291},
+        loadstringUrl = "https://raw.githubusercontent.com/stylemakeritosh/RinX/refs/heads/main/Mm2X",
+        correctKey = "OPMM2RINXRINNY92610",
+        fileName = "mm2rinnyson.txt"
+    }    
 }
 
 -- Helper function to check if gameId exists in any config
