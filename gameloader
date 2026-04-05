@@ -504,7 +504,7 @@ local function loadGameScript()
     end)
 
     GetKeyBtn.MouseButton1Click:Connect(function()
-        setclipboard("https://discord.gg/nHS3RxTM5M")
+        setclipboard("https://discord.gg/tBcddWAP64")
         game:GetService("StarterGui"):SetCore("SendNotification", {
             Title = "Key Link",
             Text = "Link for the key copied to clipboard!",
