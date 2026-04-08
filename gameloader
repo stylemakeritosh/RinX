@@ -213,7 +213,7 @@ ImageLabel_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
 ImageLabel_2.BorderSizePixel = 0
 ImageLabel_2.Position = UDim2.new(0.05, 0, 0.0717872535, 0)
 ImageLabel_2.Size = UDim2.new(0, 30, 0, 29)
-ImageLabel_2.Image = "rbxassetid://86394678796015"
+ImageLabel_2.Image = "rbxassetid://126541609725222"
 
 UICorner.CornerRadius = UDim.new(0, 12)
 UICorner.Parent = Main
