@@ -69,6 +69,18 @@ local gameConfig = {
         loadstringUrl = "https://raw.githubusercontent.com/stylemakeritosh/RinX/refs/heads/main/Mm2X",
         correctKey = "OPMM2RINXRINNY92610",
         fileName = "mm2rinnyson.txt"
+    },
+    {
+        gameIds = {71008479572236},
+        loadstringUrl = "https://raw.githubusercontent.com/stylemakeritosh/RinX/refs/heads/main/BiteByNightX",
+        correctKey = "BITEBYNIGHTCRAZYX16820",
+        fileName = "bitebynightrinx.txt"
+    },
+    {
+        gameIds = {93978595733734},
+        loadstringUrl = "https://raw.githubusercontent.com/stylemakeritosh/RinX/refs/heads/main/ViolenceDistrictX",
+        correctKey = "VIOLENCEXDISTRICTRINX839916",
+        fileName = "violencedistrinx.txt"
     }    
 }
 
